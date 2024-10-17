@@ -52,22 +52,26 @@ int main(){
 			len--;
 		}
 		char *curr = strtok(buffer, ",");
-		char *prev;
-		while (curr != NULL){
-			if (flag){
+		char *prev = NULL;
+		while (curr != NULL) {
+			if (flag) {
 				adj_matrix[index][get_station_index(curr)] = 1;
 				adj_matrix[get_station_index(curr)][index] = 1;
-				prev = curr;
+				prev = strdup(curr);
 				curr = strtok(NULL, ",");
 				flag = 0;
-			}
+			} 
 			else {
-				add_edge_weight(index, get_station_index(prev), atoi(curr));
+				if (prev) {
+					add_edge_weight(index, get_station_index(prev), atoi(curr));
+					free(prev);
+				}
 				curr = strtok(NULL, ",");
 				flag = 1;
 			}
 		}
 		index++;
+
 	}
 	fclose(stationEdges);
 
