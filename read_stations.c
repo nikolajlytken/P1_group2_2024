@@ -44,7 +44,7 @@ int main(){
 	index = 0;
 	int flag = 1;
 
-	while (fgets(buffer, sizeof(buffer), stationFile)){
+	while (fgets(buffer, sizeof(buffer), stationEdges)){
 		len = strlen(buffer);
 
 		if (buffer[len - 1] == '\n'){
