@@ -151,7 +151,7 @@ void add_name_index(char *name, int index){
 
     ni->index = index;
 
-    HASH_ADD(hh, name_to_index, ni->name, strlen(ni->name), ni);
+    HASH_ADD(hh, name_to_index, name, strlen(ni->name), ni);
 }
 
 int get_edge_weight(int vertex1, int vertex2) {
