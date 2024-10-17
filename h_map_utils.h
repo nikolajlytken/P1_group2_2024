@@ -1,4 +1,4 @@
-// Functions to abstract adding key-value pairs, retrieving looking up tables, and freeing memory.
+// Functions to abstract adding key-value pairs, looking up in tables, and freeing memory.
 void add_edge_weight(int vertex1, int vertex2, int weight);
 void add_index_name(int index, char *name);
 void add_name_index(char *name, int index);
