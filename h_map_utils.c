@@ -151,7 +151,7 @@ void add_name_index(char *name, int index){
 
     ni->index = index;
 
-    HASH_ADD(hh, name_to_index, name, strlen(ni->name), ni);
+    HASH_ADD_STR(name_to_index, name, ni);
 }
 
 int get_edge_weight(int vertex1, int vertex2) {
@@ -190,8 +190,7 @@ char* get_station_name(int index) {
 int get_station_index(char *name){
     nameToIndex *ni = NULL;
 
-    HASH_FIND(hh, name_to_index, name, strlen(name), ni);
-
+    HASH_FIND_STR(name_to_index, name, ni);
     if (ni) {
         return ni->index;
     } else {
@@ -226,6 +225,7 @@ void free_edge_weights() {
     }
 }
 
+// Same as above
 void free_names_index(){
     nameToIndex *current, *temp;
 
@@ -235,6 +235,7 @@ void free_names_index(){
         free(current);
     }
 }
+
 
 
 
