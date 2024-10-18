@@ -168,7 +168,8 @@ int get_edge_weight(int vertex1, int vertex2) {
     // If key is found, return its value (weight), else return -1
     if (ew) {
         return ew->weight;
-    } else {
+    } 
+    else {
         return -1;
     }
 }
@@ -181,7 +182,8 @@ char* get_station_name(int index) {
 
     if (in) {
         return in->name;
-    } else {
+    } 
+    else {
         return NULL;
     }
 }
@@ -193,7 +195,8 @@ int get_station_index(char *name){
     HASH_FIND_STR(name_to_index, name, ni);
     if (ni) {
         return ni->index;
-    } else {
+    } 
+    else {
         return -1;
     }
 }
