@@ -27,6 +27,7 @@ void DFS(int node, int num_nodes, int adj_matrix[MAX_NODES][MAX_NODES], int visi
 // Breatdh-First-Search
 void BFS(int start_node, int num_nodes, int adj_matrix[MAX_NODES][MAX_NODES], int visited[MAX_NODES]) {
     int queue[MAX_NODES];
+    // Variables that represents the index of our "front element" and "last element" in the queue
     int front = 0, back = 0;
 
     // Put start node in queue and mark as visited
