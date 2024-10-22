@@ -5,6 +5,7 @@
 #define MAX_NODES 100 // Our number of nodes
 
 void DFS(int node, int n, int adj_matrix[MAX_NODES][MAX_NODES], int visited[MAX_NODES]);
+void BFS(int start_node, int num_nodes, int adjMatrix[MAX_NODES][MAX_NODES], int visited[MAX_NODES]);
 int is_graph_connected(int n, int adj_matrix[MAX_NODES][MAX_NODES]);
 
 // Depth-First-Search
@@ -57,6 +58,7 @@ int is_graph_connected(int num_nodes, int adj_matrix[MAX_NODES][MAX_NODES]) {
     int visited[MAX_NODES] = {0}; 
 
     // Call DFS (which node we choose actually doesnt matter since the graph is undirected)
+    // Could swap with BFS()
     DFS(0, num_nodes, adj_matrix, visited);
 
     // Simply check every node in visited. If any has not been visited, graph is unconnected
