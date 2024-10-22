@@ -25,7 +25,7 @@ void DFS(int node, int num_nodes, int adj_matrix[MAX_NODES][MAX_NODES], int visi
 }
 
 // Breatdh-First-Search
-void BFS(int start_node, int num_nodes, int adjMatrix[MAX_NODES][MAX_NODES], int visited[MAX_NODES]) {
+void BFS(int start_node, int num_nodes, int adj_matrix[MAX_NODES][MAX_NODES], int visited[MAX_NODES]) {
     int queue[MAX_NODES];
     int front = 0, back = 0;
 
@@ -42,7 +42,7 @@ void BFS(int start_node, int num_nodes, int adjMatrix[MAX_NODES][MAX_NODES], int
 
         // Check every node current node connects to, put in queue and mark as visited, since it can be reached
         for (int i = 0; i < n; i++){
-            if (adjMatrix[node][i] == 1 && !visited[i]) {
+            if (adj_matrix[node][i] == 1 && !visited[i]) {
             	back++;
                 queue[back] = i;
                 visited[i] = 1;
