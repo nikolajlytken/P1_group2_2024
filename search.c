@@ -62,7 +62,7 @@ int is_graph_connected(int num_nodes, int adj_matrix[MAX_NODES][MAX_NODES]) {
     DFS(0, num_nodes, adj_matrix, visited);
 
     // Simply check every node in visited. If any has not been visited, graph is unconnected
-    for (int i = 0; i < n; i++){
+    for (int i = 0; i < num_nodes; i++){
         if (!visited[i]) {
             return 0; 
         }
