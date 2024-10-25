@@ -1,7 +1,7 @@
 # Backcasting
 
 ## Uge 44
-### Mandag:
+### Mandag d 28/10:
 - Problemafgrænsning påbegyndes
 
 ## Uge 45
@@ -12,29 +12,29 @@
 - Problemformulering udkast færdig
 
 ## Uge 46
-### Fredag
+### Fredag d 15/11
 - Problemanalyse udkast færdig
 
 ## Uge 47
-### Mandag
+### Mandag d 18/11
 - Problemløsning start
-### Fredag
+### Fredag 22/11
 - Data struktureret og klar til indlæsning
 
 ## Uge 48
-### Onsdag
+### Onsdag 27/11
 - Statusseminar
-### Torsdag
+### Torsdag 28/11
 - Statusseminar
-### Fredag
+### Fredag 29/11
 - Procesanalyse kl 12
 
 ## Uge 49
-### Hele ugen:
+### Hele ugen: d 2/12 - 8/12
 - Arbejde på produktet
 
 ## Uge 50
-### Fredag
+### Fredag 13/12
 - Produkt-udkast er færdig
 
 ## Uge 51
