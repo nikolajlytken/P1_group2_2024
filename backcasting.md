@@ -6,7 +6,7 @@
 
 ## Uge 45
 ### Mandag d 3/11
-- Problemanalyse påbegyndes
+- Problemanalyse påbegyndes hej igen
 ### Fredag d 8/11
 - Problemafgrænsning færdig
 - Problemformulering udkast færdig
