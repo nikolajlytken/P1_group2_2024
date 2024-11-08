@@ -2,17 +2,17 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define NUM_STATIONS 8
+#define NUM_STATIONS 5
 
-typedef struct ListNode {
+typedef struct AdjListNode {
     int dest;
     int weight;
-    struct ListNode* next;
-} ListNode;
+    struct AdjListNode* next;
+} AdjListNode;
 
 typedef struct Station {
     char name[50];
-    ListNode* adj_list_head;
+    AdjListNode* adj_list_head;
 } Station;
 
 typedef struct Graph {
@@ -22,35 +22,76 @@ typedef struct Graph {
 
 Station* create_station(char name[]);
 void create_linked_list_head(Station* station_head, int index);
-void free_adj_list(ListNode* head);
+void free_adj_list(AdjListNode* head);
 int get_dest(Station** stations, int len, char* name);
 void print_adj_list(Graph* network);
-ListNode* find_middle_node(ListNode* head);
-ListNode* find_least_weight(ListNode* head);
+
+void dfsRec(Station** stations, int visited[], int source, int target){
+
+    visited[source] = 1;
+
+    printf("%d ", source);
+    if(source == target){
+        return target;
+    }
+
+    AdjListNode* current = stations[source]->adj_list_head;
+
+    int t = -1;
+
+    while(current != NULL){
+        int dest = current ->dest;
+
+        if(!visited[dest]){
+           t = dfsRec(stations,visited,dest);
+           if (t == target){
+                return t;
+           }
+           else{
+            continue;
+           }
+        }
+
+        current = current->next;
+    }
+
+
+    
+}
+
+void dfsRec_start(Station** stations, int V, int s,int to){
+    int visited[V];
+
+    for(int i = 0; i < V; i++){
+        visited[i] = 0;
+    }
+
+    dfsRec(stations,visited,s);
+
+}
+
+
+
 
 /*
 stations.txt ser således ud (den er lavet som simpel test-case):
 
-Aarhus,Randers,30,Aalborg,50,Viborg,129,Haderslev,121,Esbjerg,12,Odense,140,Copenhagen,117
-Viborg,Randers,40,Aalborg,80,Aarhus,129,Haderslev,69,Esbjerg,149,Odense,99,Copenhagen,68
-Haderslev,Randers,100,Aarhus,121,Viborg,69,Aalborg,57,Esbjerg,89,Odense,92,Copenhagen,123
-Randers,Aarhus,30,Viborg,40,Haderslev,100,Aalborg,33,Esbjerg,130,Odense,46,Copenhagen,11
-Aalborg,Aarhus,50,Viborg,80,Randers,33,Haderslev,57,Esbjerg,46,Odense,78,Copenhagen,84
-Esbjerg,Randers,130,Aarhus,12,Viborg,149,Aalborg,46,Haderslev,89,Odense,91,Copenhagen,48
-Odense,Randers,46,Aarhus,140,Viborg,99,Aalborg,78,Haderslev,92,Esbjerg,91,Copenhagen,59
-Copenhagen,Randers,11,Aarhus,117,Viborg,68,Aalborg,84,Haderslev,123,Esbjerg,48,Odense,59
-
+Randers,Aarhus,30,Viborg,40,Haderslev,100
+Aarhus,Aalborg,50,Randers,30
+Viborg,Randers,40,Aalborg,80
+Aalborg,Aarhus,50,Viborg,80
+Haderslev,Randers,100
 
 Første by på værd linje er hovedet, og efterfølgende er de byer, som hovedet har en edge til samt deres vægte.
 */
 
 int main() {
-    Graph* network = (Graph*)malloc(sizeof(Graph));
+    Graph *network = (Graph*)malloc(sizeof(Graph));
     network->num_stations = NUM_STATIONS;
 
     network->stations = (Station**)malloc(sizeof(Station*) * network->num_stations);
 
-    FILE* pF = fopen("fully_connected_graph.txt", "r");
+    FILE* pF = fopen("stations.txt", "r");
 
     if (pF == NULL) {
         exit(EXIT_FAILURE);
@@ -87,6 +128,7 @@ int main() {
 
         // Læg mærke til, hvordan vi håndterer linjen i filen. Vi skal jo gøre noget forskelligt alt efter
         // om det er en vægt eller en station der skal indlæses
+        int flag = 1;
         int numeric = 0;
         int curr_dest = -1;
         char* curr;
@@ -94,7 +136,7 @@ int main() {
         // Start med at lave hovedet på listen
         curr = strtok(buffer, ",");
         create_linked_list_head(network->stations[index], index);
-        ListNode* last_node = network->stations[index]->adj_list_head;
+        AdjListNode* last_node = network->stations[index]->adj_list_head;
 
         // Gennemgå linje i filen og lav den linkede liste
         // strtok() samler input indtil næste komma, og placerer NULL på dets plads, som den starter ved igen
@@ -111,7 +153,7 @@ int main() {
                 numeric = 1;
             } 
             else {
-                ListNode* new_node = (ListNode*)malloc(sizeof(ListNode));
+                AdjListNode* new_node = (AdjListNode*)malloc(sizeof(AdjListNode));
                 new_node->dest = curr_dest;
                 new_node->weight = atoi(curr);
                 new_node->next = NULL;
@@ -156,15 +198,15 @@ Station* create_station(char name[]){
 }
 
 void create_linked_list_head(Station *station_head, int index){
-    ListNode* head = (ListNode*)malloc(sizeof(ListNode));
+    AdjListNode* head = (AdjListNode*)malloc(sizeof(AdjListNode));
     head->next = NULL;
     head->weight = 0;
     head->dest = index;
     station_head->adj_list_head = head;
 }
 
-void free_adj_list(ListNode* head){
-    ListNode* temp;
+void free_adj_list(AdjListNode* head){
+    AdjListNode* temp;
     while (head != NULL){
         temp = head;
         head = head->next;
@@ -187,7 +229,7 @@ void print_adj_list(Graph* network){
         printf("%s", station->name);
         printf(" [");
         printf("%s (Weight: %d)", station->name, 0);
-        ListNode *current = station->adj_list_head->next;
+        AdjListNode *current = station->adj_list_head->next;
         while (current != NULL){
             printf(" -> %s (Weight: %d) (Dest: %d)", network->stations[current->dest]->name, current->weight, current->dest);
             current = current->next;
@@ -195,32 +237,4 @@ void print_adj_list(Graph* network){
         printf("]");
         printf("\n");
     }
-}
-
-ListNode* find_middle_node(ListNode* head){
-    ListNode* slow = head,* fast = head;
-
-    while (fast && fast->next){
-        slow = slow->next;
-        fast = fast->next->next;
-    }
-
-    return slow;
-}
-
-ListNode* find_least_weight(ListNode* head){
-    ListNode* min = head->next;
-    head = head->next;
-
-    if (min == NULL){
-        return NULL;
-    }
-
-    while (head->next){
-        if (min->weight > head->next->weight){
-            min = head->next;
-        }
-        head = head->next;
-    }
-    return min;
 }
