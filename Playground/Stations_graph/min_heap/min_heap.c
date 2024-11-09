@@ -4,7 +4,16 @@
 
 #include "min_heap/min_heap.h"
 
-void heapify_down(MinHeap* heap, int index){
+void swap(MinHeap *heap, int index1, int index2, int *positions) {
+    HeapNode temp = heap->data[index1];
+    heap->data[index1] = heap->data[index2];
+    heap->data[index2] = temp;
+
+    heap->positions[heap->data[index1].node] = index1;
+    heap->positions[heap->data[index2].node] = index2;
+}
+
+void heapify_down(MinHeap* heap, int index) {
     int smallest = index;
     int left = 2 * index + 1;
     int right = 2 * index + 2;
@@ -18,12 +27,12 @@ void heapify_down(MinHeap* heap, int index){
     }
 
     if (smallest != index) {
-        swap(&heap->data[index], &heap->data[smallest]);
+        swap(heap, smallest, index, heap->positions);
         heapify_down(heap, smallest);
     }
 }
 
-HeapNode extract_min(MinHeap *heap){
+HeapNode extract_min(MinHeap *heap) {
     if (heap->size <= 0) {
         printf("Heap is empty\n");
         return (HeapNode){-1, -1};
@@ -42,12 +51,12 @@ void heapify_up(MinHeap* heap, int index, int* positions) {
         positions[heap->data[index].node] = (index - 1) / 2;
         positions[heap->data[(index - 1) / 2].node] = index;
 
-        swap(&heap->data[index], &heap->data[(index - 1) / 2]);
+        swap(heap, index, (index - 1) / 2, heap->positions);
         index = (index - 1) / 2;
     }
 }
 
-void insert_element(MinHeap* heap, HeapNode value, int* positions){
+void insert_element(MinHeap* heap, HeapNode value, int* positions) {
     if (heap->size == MAX_SIZE) {
         printf("Heap is full\n");
         return;
@@ -60,7 +69,7 @@ void insert_element(MinHeap* heap, HeapNode value, int* positions){
     heapify_up(heap, i, positions);
 }
 
-void decrease_key(MinHeap* heap, int node_index, int new_distance, int* positions){
+void decrease_key(MinHeap* heap, int node_index, int new_distance, int* positions) {
     int i = heap->positions[node_index];
     heap->data[i].distance = new_distance;
 
