@@ -18,3 +18,4 @@ HeapNode extract_min(MinHeap *heap);
 void heapify_up(MinHeap* heap, int index, int* positions);
 void insert_element(MinHeap* heap, HeapNode value, int* positions);
 void decrease_key(MinHeap* heap, int node_index, int new_distance, int* positions);
+void swap(MinHeap *heap, int index1, int index2, int *positions);
