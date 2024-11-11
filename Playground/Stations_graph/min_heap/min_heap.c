@@ -27,9 +27,6 @@ MinHeap* initialize_heap(int source, int num_nodes){
             insert_element(new_heap, (HeapNode){i, 0}, new_heap->positions);
         }
         else {
-            HeapNode new_node;
-            new_node.distance = INT_MAX;
-            new_node.node = i;
             insert_element(new_heap, (HeapNode){i, INT_MAX}, new_heap->positions);
         }
     }
