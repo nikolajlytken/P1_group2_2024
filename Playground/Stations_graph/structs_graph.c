@@ -136,6 +136,8 @@ int main() {
     Haderslev [Haderslev (Weight: 0) -> Randers (Weight: 100) (Dest: 0)]
     */
 
+   
+
     for (int i = 0; i < NUM_STATIONS; i++) {
         free_adj_list(network->stations[i]->adj_list_head);
         free(network->stations[i]);
