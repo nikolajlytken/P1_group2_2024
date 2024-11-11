@@ -26,7 +26,7 @@ void free_adj_list(AdjListNode* head);
 int get_dest(Station** stations, int len, char* name);
 void print_adj_list(Graph* network);
 
-void dfsRec(Station** stations, int visited[], int source, int target){
+int dfsRec(Station** stations, int visited[], int source, int target){
 
     visited[source] = 1;
 
@@ -43,7 +43,7 @@ void dfsRec(Station** stations, int visited[], int source, int target){
         int dest = current ->dest;
 
         if(!visited[dest]){
-           t = dfsRec(stations,visited,dest);
+           t = dfsRec(stations,visited,dest,target);
            if (t == target){
                 return t;
            }
@@ -66,7 +66,7 @@ void dfsRec_start(Station** stations, int V, int s,int to){
         visited[i] = 0;
     }
 
-    dfsRec(stations,visited,s);
+    dfsRec(stations,visited,s,to);
 
 }
 
