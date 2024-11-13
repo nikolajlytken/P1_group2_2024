@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define NUM_STATIONS 5
+#define NUM_STATIONS 8
 
 typedef struct AdjListNode {
     int dest;
@@ -26,25 +26,26 @@ void free_adj_list(AdjListNode* head);
 int get_dest(Station** stations, int len, char* name);
 void print_adj_list(Graph* network);
 
-int dfsRec(Station** stations, int visited[], int source, int target){
+int dfsRec(Station** stations, int visited[], int source, int target, int st[], int PathIndex){
 
     visited[source] = 1;
+    st[PathIndex] = source;
 
-    printf("%d ", source);
+    //printf("%d ", source);
     if(source == target){
-        return target;
+        return PathIndex;
     }
 
-    AdjListNode* current = stations[source]->adj_list_head;
+    AdjListNode* current = stations[source]->adj_list_head->next;
 
-    int t = -1;
+    int t = 0;
 
     while(current != NULL){
         int dest = current ->dest;
 
         if(!visited[dest]){
-           t = dfsRec(stations,visited,dest,target);
-           if (t == target){
+           t = dfsRec(stations,visited,dest,target,st,PathIndex + 1);
+           if (t != 0){
                 return t;
            }
            else{
@@ -54,21 +55,37 @@ int dfsRec(Station** stations, int visited[], int source, int target){
 
         current = current->next;
     }
+    return 0;
 
 
     
 }
 
+
 void dfsRec_start(Station** stations, int V, int s,int to){
     int visited[V];
+    int PathIndex = 0;
+    int st[V];
 
     for(int i = 0; i < V; i++){
         visited[i] = 0;
     }
+    for(int j = 0; j < V; j++){
+        st[j] = 0;
+    }
 
-    dfsRec(stations,visited,s,to);
+    int targetindex = dfsRec(stations,visited,s,to,st,PathIndex);
+    for(int i = 0; i <= targetindex; i++){
+        printf(" %s ", stations[st[i]]->name);
+        if(i != targetindex){
+            printf(" ->");
+        }
+
+    }
+    printf("\n Lenght of path %d \n", targetindex + 1);
 
 }
+
 
 
 
@@ -92,7 +109,7 @@ int main() {
 
     network->stations = (Station**)malloc(sizeof(Station*) * network->num_stations);
 
-    FILE* pF = fopen("stations.txt", "r");
+    FILE* pF = fopen("fully_connected_graph.txt", "r");
 
     if (pF == NULL) {
         exit(EXIT_FAILURE);
@@ -179,7 +196,7 @@ int main() {
     Haderslev [Haderslev (Weight: 0) -> Randers (Weight: 100) (Dest: 0)]
     */
    int source = 0;
-   int target = 5;
+   int target = 4;
    dfsRec_start(network->stations, NUM_STATIONS, source, target);
 
     for (int i = 0; i < NUM_STATIONS; i++) {
