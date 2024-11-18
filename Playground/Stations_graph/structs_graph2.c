@@ -27,11 +27,9 @@ int get_dest(Station** stations, int len, char* name);
 void print_adj_list(Graph* network);
 
 int dfsRec(Station** stations, int visited[], int source, int target, int st[], int PathIndex){
-
     visited[source] = 1;
     st[PathIndex] = source;
-
-    //printf("%d ", source);
+    
     if(source == target){
         return PathIndex;
     }
@@ -52,15 +50,10 @@ int dfsRec(Station** stations, int visited[], int source, int target, int st[], 
             continue;
            }
         }
-
         current = current->next;
     }
     return 0;
-
-
-    
 }
-
 
 void dfsRec_start(Station** stations, int V, int s,int to){
     int visited[V];
@@ -83,12 +76,7 @@ void dfsRec_start(Station** stations, int V, int s,int to){
 
     }
     printf("\n Lenght of path %d \n", targetindex + 1);
-
 }
-
-
-
-
 
 /*
 stations.txt ser således ud (den er lavet som simpel test-case):
@@ -185,7 +173,7 @@ int main() {
 
     fclose(pF);
 
-    print_adj_list(network);
+    //print_adj_list(network);
 
     /*
     Output:
