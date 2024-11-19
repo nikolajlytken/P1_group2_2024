@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "linkedlist_nik.h"
 
+// Creates new node
 Node* create_node(int key) {
     Node* new_node = (Node*)malloc(sizeof(Node));
     new_node->key = key;
@@ -9,14 +10,17 @@ Node* create_node(int key) {
     return new_node;
 }
 
+// Initializes the linked list
 void init_list(LinkedList* list){
     list->head = NULL;
 }
 
+// Checks if linked list is empty
 int is_empty(LinkedList* list){
     return list->head == NULL;
 }
 
+// Traverses the linked list (if not empty) and append a new node at the end
 void append(LinkedList* list, int key){
     Node* new_node = create_node(key);
     if (is_empty(list)){
@@ -30,12 +34,14 @@ void append(LinkedList* list, int key){
     }
 }
 
+// "Pushes" the linked list one node ahead, and implement a new node on the empty spot
 void prepend(LinkedList* list, int key){
     Node* new_node = create_node(key);
     new_node->next = list->head;
     list->head = new_node;
 }
 
+// Removes and returns the last node, by making a "previous" node, that sets next to NULL
 Node* pop(LinkedList* list){
     if (is_empty(list)){
         return NULL;
@@ -58,6 +64,7 @@ Node* pop(LinkedList* list){
     return current_node;
 }
 
+// Removes and returns (pop) the first element of the linked list
 Node* pop_first(LinkedList* list){
     if (is_empty(list)){
         return NULL;
@@ -68,6 +75,7 @@ Node* pop_first(LinkedList* list){
     return first_node;
 }
 
+// Search for a node with a specific key, and removes the node when found
 Node* remove_node(LinkedList* list, int key){
     Node* current_node = list->head;
     Node* previous_node = NULL;
@@ -88,6 +96,7 @@ Node* remove_node(LinkedList* list, int key){
     return NULL;
 }
 
+// Finds the tail (last_node)
 Node* tail(LinkedList* list){
     Node* last_node = list->head;
     while (last_node != NULL && last_node->next != NULL){
@@ -96,6 +105,7 @@ Node* tail(LinkedList* list){
     return last_node;
 }
 
+// Prints the linked list
 void print_list(LinkedList* list){
     Node* current_node = list->head;
     while (current_node != NULL){
@@ -105,6 +115,7 @@ void print_list(LinkedList* list){
     printf("NULL\n");
 }
 
+// Returns 1 if linked list contains item that is searched for
 int contains(LinkedList* list, int key){
     Node* current_node = list->head;
     while (current_node != NULL){
@@ -116,6 +127,7 @@ int contains(LinkedList* list, int key){
     return 0;
 }
 
+// Frees the list
 void free_list(LinkedList* list){
     Node* current_node = list->head;
     while (current_node != NULL){
