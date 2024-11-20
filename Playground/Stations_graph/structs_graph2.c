@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
+#include "../LinkedList/linkedlist_nik.h"
 
 #define NUM_STATIONS 8
 
@@ -25,58 +27,8 @@ void create_linked_list_head(Station* station_head, int index);
 void free_adj_list(AdjListNode* head);
 int get_dest(Station** stations, int len, char* name);
 void print_adj_list(Graph* network);
-
-int dfsRec(Station** stations, int visited[], int source, int target, int st[], int PathIndex){
-    visited[source] = 1;
-    st[PathIndex] = source;
-    
-    if(source == target){
-        return PathIndex;
-    }
-
-    AdjListNode* current = stations[source]->adj_list_head->next;
-
-    int t = 0;
-
-    while(current != NULL){
-        int dest = current ->dest;
-
-        if(!visited[dest]){
-           t = dfsRec(stations,visited,dest,target,st,PathIndex + 1);
-           if (t != 0){
-                return t;
-           }
-           else{
-            continue;
-           }
-        }
-        current = current->next;
-    }
-    return 0;
-}
-
-void dfsRec_start(Station** stations, int V, int s,int to){
-    int visited[V];
-    int PathIndex = 0;
-    int st[V];
-
-    for(int i = 0; i < V; i++){
-        visited[i] = 0;
-    }
-    for(int j = 0; j < V; j++){
-        st[j] = 0;
-    }
-
-    int targetindex = dfsRec(stations,visited,s,to,st,PathIndex);
-    for(int i = 0; i <= targetindex; i++){
-        printf(" %s ", stations[st[i]]->name);
-        if(i != targetindex){
-            printf(" ->");
-        }
-
-    }
-    printf("\n Lenght of path %d \n", targetindex + 1);
-}
+int dfsRec(Station** stations, bool visited_st[], int source, int target, LinkedList* path);
+void dfsRec_start(Station** stations, int V, int source, int target);
 
 /*
 stations.txt ser således ud (den er lavet som simpel test-case):
@@ -91,7 +43,6 @@ Første by på værd linje er hovedet, og efterfølgende er de byer, som hovedet
 */
 
 int main() {
-    
     Graph *network = (Graph*)malloc(sizeof(Graph));
     network->num_stations = NUM_STATIONS;
 
@@ -183,9 +134,9 @@ int main() {
     Aalborg [Aalborg (Weight: 0) -> Aarhus (Weight: 50) (Dest: 1) -> Viborg (Weight: 80) (Dest: 2)]
     Haderslev [Haderslev (Weight: 0) -> Randers (Weight: 100) (Dest: 0)]
     */
-   int source = 0;
-   int target = 4;
-   dfsRec_start(network->stations, NUM_STATIONS, source, target);
+    int source = 0;
+    int target = 4;
+    dfsRec_start(network->stations, NUM_STATIONS, source, target);
 
     for (int i = 0; i < NUM_STATIONS; i++) {
         free_adj_list(network->stations[i]->adj_list_head);
@@ -195,6 +146,42 @@ int main() {
     free(network->stations);
     free(network);
 
+    return 0;
+}
+
+void dfsRec_start(Station** stations, int V, int source, int target){
+    bool visited_st[NUM_STATIONS] = {false};
+    LinkedList path;
+    init_list(&path);
+
+    if (dfsRec(stations, visited_st, source, target, &path)){
+        print_list(&path);
+    } else {
+        printf("No path found.\n");
+    }
+
+    free_list(&path);
+}
+
+int dfsRec(Station** stations, bool visited_st[], int source, int target, LinkedList* path){
+    visited_st[source] = true;
+    prepend(path, source);
+    
+    if(source == target){
+        return 1;
+    }
+
+    AdjListNode* adj_node = stations[source]->adj_list_head;
+    while (adj_node != NULL){
+        if (!visited_st[adj_node->dest]){
+            if (dfsRec(stations, visited_st, adj_node->dest, target, path)){
+                return 1;
+            }
+        }
+        adj_node = adj_node->next;
+    }
+
+    pop_first(path);
     return 0;
 }
 
@@ -247,9 +234,3 @@ void print_adj_list(Graph* network){
         printf("\n");
     }
 }
-
-
-
-
-
-
