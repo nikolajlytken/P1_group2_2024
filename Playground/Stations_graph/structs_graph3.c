@@ -36,22 +36,22 @@ int bfs(Station** stations, int visited[], int source, int target, int st[], int
     queue[rear++] = source;
 
     int previous[V];
-    for (int i = 0; i < V; i++) {
+    for (int i = 0; i < V; i++){
         previous[i] = -1;
     }
 
-    while (front < rear) {
+    while(front < rear){
         int current = queue[front++];
-        if (current == target) {
+        if (current == target){
             break;
         }
 
         AdjListNode* current_adj = stations[current]->adj_list_head->next;
         
-        while (current_adj != NULL) {
+        while(current_adj != NULL){
             int neighbor = current_adj->dest;
 
-            if (!visited[neighbor]) {
+            if (!visited[neighbor]){
                 visited[neighbor] = 1;
                 queue[rear++] = neighbor;
                 previous[neighbor] = current; 
@@ -63,7 +63,7 @@ int bfs(Station** stations, int visited[], int source, int target, int st[], int
 
     int path_len = 0;
     int path_index = target;
-    while (path_index != -1) {
+    while(path_index != -1){
         st[path_len++] = path_index;
         path_index = previous[path_index];
     }
@@ -72,16 +72,16 @@ int bfs(Station** stations, int visited[], int source, int target, int st[], int
 }
 
 
-void bfs_start(Station** stations, int V, int s, int to) {
+void bfs_start(Station** stations, int V, int s, int to){
     int visited[V];
     int st[V];
-    for (int i = 0; i < V; i++) {
+    for(int i = 0; i < V; i++){
         visited[i] = 0;
     }
 
     int path_len = bfs(stations, visited, s, to, st, V);
-    for (int i = path_len - 1; i >= 0; i--) {
-        printf(" %s ", stations[st[i]]->name);
+    for(int i = path_len - 1; i >= 0; i--){
+        printf("%s ", stations[st[i]]->name);
         if (i != 0) {
             printf("->");
         }
@@ -193,8 +193,8 @@ int main() {
     Haderslev [Haderslev (Weight: 0) -> Randers (Weight: 100) (Dest: 0)]
     */
 
-    int source = 2;
-    int target = 3;
+    int source = 0;
+    int target = 7;
     bfs_start(network->stations, NUM_STATIONS, source, target);
 
     for (int i = 0; i < NUM_STATIONS; i++) {
