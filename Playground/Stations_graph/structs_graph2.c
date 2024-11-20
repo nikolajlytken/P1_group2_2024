@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 #include "../LinkedList/linkedlist_nik.h"
 
 #define NUM_STATIONS 8
@@ -26,8 +27,8 @@ void create_linked_list_head(Station* station_head, int index);
 void free_adj_list(AdjListNode* head);
 int get_dest(Station** stations, int len, char* name);
 void print_adj_list(Graph* network);
-int dfsRec(Station** stations, LinkedList* visited, int source, int target, LinkedList* path);
-void dfsRec_start(Station** stations, int V, int s, int to);
+int dfsRec(Station** stations, bool visited_st[], int source, int target, LinkedList* path);
+void dfsRec_start(Station** stations, int V, int source, int target);
 
 /*
 stations.txt ser således ud (den er lavet som simpel test-case):
@@ -149,24 +150,22 @@ int main() {
 }
 
 void dfsRec_start(Station** stations, int V, int source, int target){
-    LinkedList visited;
+    bool visited_st[NUM_STATIONS] = {false};
     LinkedList path;
-    init_list(&visited);
     init_list(&path);
 
-    if (dfsRec(stations, &visited, source, target, &path)){
+    if (dfsRec(stations, visited_st, source, target, &path)){
         print_list(&path);
     } else {
         printf("No path found.\n");
     }
 
-    free_list(&visited);
     free_list(&path);
 }
 
-int dfsRec(Station** stations, LinkedList* visited, int source, int target, LinkedList* path){
-    append(visited, source);
-    append(path, source);
+int dfsRec(Station** stations, bool visited_st[], int source, int target, LinkedList* path){
+    visited_st[source] = true;
+    prepend(path, source);
     
     if(source == target){
         return 1;
@@ -174,15 +173,15 @@ int dfsRec(Station** stations, LinkedList* visited, int source, int target, Link
 
     AdjListNode* adj_node = stations[source]->adj_list_head;
     while (adj_node != NULL){
-        if (!contains(visited, adj_node->dest)){
-            if (dfsRec(stations, visited, adj_node->dest, target, path)){
+        if (!visited_st[adj_node->dest]){
+            if (dfsRec(stations, visited_st, adj_node->dest, target, path)){
                 return 1;
             }
         }
         adj_node = adj_node->next;
     }
 
-    pop(path);
+    pop_first(path);
     return 0;
 }
 
@@ -235,9 +234,3 @@ void print_adj_list(Graph* network){
         printf("\n");
     }
 }
-
-
-
-
-
-
