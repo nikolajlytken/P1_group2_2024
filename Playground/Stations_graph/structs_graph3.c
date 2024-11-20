@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 #define NUM_STATIONS 8
 
@@ -26,68 +27,67 @@ void free_adj_list(AdjListNode* head);
 int get_dest(Station** stations, int len, char* name);
 void print_adj_list(Graph* network);
 
-int dfsRec(Station** stations, int visited[], int source, int target, int st[], int PathIndex){
+int bfs(Station** stations, int visited[], int source, int target, int st[], int V){
+    int queue[V];
+    int front = 0, rear = 0;
 
     visited[source] = 1;
-    st[PathIndex] = source;
 
-    //printf("%d ", source);
-    if(source == target){
-        return PathIndex;
+    queue[rear++] = source;
+
+    int previous[V];
+    for (int i = 0; i < V; i++) {
+        previous[i] = -1;
     }
 
-    AdjListNode* current = stations[source]->adj_list_head->next;
-
-    int t = 0;
-
-    while(current != NULL){
-        int dest = current ->dest;
-
-        if(!visited[dest]){
-           t = dfsRec(stations,visited,dest,target,st,PathIndex + 1);
-           if (t != 0){
-                return t;
-           }
-           else{
-            continue;
-           }
+    while (front < rear) {
+        int current = queue[front++];
+        if (current == target) {
+            break;
         }
 
-        current = current->next;
+        AdjListNode* current_adj = stations[current]->adj_list_head->next;
+        
+        while (current_adj != NULL) {
+            int neighbor = current_adj->dest;
+
+            if (!visited[neighbor]) {
+                visited[neighbor] = 1;
+                queue[rear++] = neighbor;
+                previous[neighbor] = current; 
+            }
+
+            current_adj = current_adj->next;
+        }
     }
-    return 0;
 
+    int path_len = 0;
+    int path_index = target;
+    while (path_index != -1) {
+        st[path_len++] = path_index;
+        path_index = previous[path_index];
+    }
 
-    
+    return path_len;
 }
 
 
-void dfsRec_start(Station** stations, int V, int s,int to){
+void bfs_start(Station** stations, int V, int s, int to) {
     int visited[V];
-    int PathIndex = 0;
     int st[V];
-
-    for(int i = 0; i < V; i++){
+    for (int i = 0; i < V; i++) {
         visited[i] = 0;
     }
-    for(int j = 0; j < V; j++){
-        st[j] = 0;
-    }
 
-    int targetindex = dfsRec(stations, visited, s, to, st, PathIndex);
-    for(int i = 0; i <= targetindex; i++){
+    int path_len = bfs(stations, visited, s, to, st, V);
+    for (int i = path_len - 1; i >= 0; i--) {
         printf(" %s ", stations[st[i]]->name);
-        if(i != targetindex){
-            printf(" ->");
+        if (i != 0) {
+            printf("->");
         }
-
     }
-    printf("\n Lenght of path %d \n", targetindex + 1);
-
+    printf("\nLength of path: %d\n", path_len);
 }
-
-
-
 
 
 /*
@@ -103,10 +103,8 @@ Første by på værd linje er hovedet, og efterfølgende er de byer, som hovedet
 */
 
 int main() {
-    
     Graph *network = (Graph*)malloc(sizeof(Graph));
     network->num_stations = NUM_STATIONS;
-
     network->stations = (Station**)malloc(sizeof(Station*) * network->num_stations);
 
     FILE* pF = fopen("fully_connected_graph.txt", "r");
@@ -121,7 +119,6 @@ int main() {
     // Læs stationer ind i vores network->stations array
     while (fgets(buffer, sizeof(buffer), pF)) {
         int len = strlen(buffer);
-
         if (buffer[len - 1] == '\n') {
             buffer[len - 1] = '\0';
         }
@@ -138,7 +135,7 @@ int main() {
 
     // Indlæs og lav vores linked lists for hver af stationerne i network->stations
     index = 0;
-    while (fgets(buffer, sizeof(buffer), pF)){
+    while (fgets(buffer, sizeof(buffer), pF)) {
         int len = strlen(buffer);
         if (buffer[len - 1] == '\n') {
             buffer[len - 1] = '\0';
@@ -161,6 +158,7 @@ int main() {
         // ved næste kald (da vi fortæller den, at det skal den gøre)
 
         // Logikken bliver lang at forklare her, så det bliver når vi gennemgår koden, men prøv at regne det ud!
+
         while ((curr = strtok(NULL, ",")) != NULL) {
             if (numeric == 0) {
                 curr_dest = get_dest(network->stations, NUM_STATIONS, curr);
@@ -169,8 +167,7 @@ int main() {
                     break;
                 }
                 numeric = 1;
-            } 
-            else {
+            } else {
                 AdjListNode* new_node = (AdjListNode*)malloc(sizeof(AdjListNode));
                 new_node->dest = curr_dest;
                 new_node->weight = atoi(curr);
@@ -187,7 +184,7 @@ int main() {
 
     print_adj_list(network);
 
-    /*
+     /*
     Output:
     Randers [Randers (Weight: 0) -> Aarhus (Weight: 30) (Dest: 1) -> Viborg (Weight: 40) (Dest: 2) -> Haderslev (Weight: 100) (Dest: 4)]
     Aarhus [Aarhus (Weight: 0) -> Aalborg (Weight: 50) (Dest: 3) -> Randers (Weight: 30) (Dest: 0)]
@@ -195,30 +192,29 @@ int main() {
     Aalborg [Aalborg (Weight: 0) -> Aarhus (Weight: 50) (Dest: 1) -> Viborg (Weight: 80) (Dest: 2)]
     Haderslev [Haderslev (Weight: 0) -> Randers (Weight: 100) (Dest: 0)]
     */
-   int source = 0;
-   int target = 4;
-   dfsRec_start(network->stations, NUM_STATIONS, source, target);
+
+    int source = 2;
+    int target = 3;
+    bfs_start(network->stations, NUM_STATIONS, source, target);
 
     for (int i = 0; i < NUM_STATIONS; i++) {
         free_adj_list(network->stations[i]->adj_list_head);
         free(network->stations[i]);
     }
-
     free(network->stations);
     free(network);
 
     return 0;
 }
 
-Station* create_station(char name[]){
+Station* create_station(char name[]) {
     Station* new_station = (Station*)malloc(sizeof(Station));
     strcpy(new_station->name, name);
     new_station->adj_list_head = NULL;
-
     return new_station;
 }
 
-void create_linked_list_head(Station *station_head, int index){
+void create_linked_list_head(Station *station_head, int index) {
     AdjListNode* head = (AdjListNode*)malloc(sizeof(AdjListNode));
     head->next = NULL;
     head->weight = 0;
@@ -226,16 +222,16 @@ void create_linked_list_head(Station *station_head, int index){
     station_head->adj_list_head = head;
 }
 
-void free_adj_list(AdjListNode* head){
+void free_adj_list(AdjListNode* head) {
     AdjListNode* temp;
-    while (head != NULL){
+    while (head != NULL) {
         temp = head;
         head = head->next;
         free(temp);
     }
 }
 
-int get_dest(Station** stations, int len, char* name){
+int get_dest(Station** stations, int len, char* name) {
     for (int i = 0; i < len; i++) {
         if (strcmp(stations[i]->name, name) == 0) {
             return i;
@@ -244,14 +240,14 @@ int get_dest(Station** stations, int len, char* name){
     return -1;
 }
 
-void print_adj_list(Graph* network){
+void print_adj_list(Graph* network) {
     for (int i = 0; i < network->num_stations; i++) {
         Station* station = network->stations[i];
         printf("%s", station->name);
         printf(" [");
         printf("%s (Weight: %d)", station->name, 0);
         AdjListNode *current = station->adj_list_head->next;
-        while (current != NULL){
+        while (current != NULL) {
             printf(" -> %s (Weight: %d) (Dest: %d)", network->stations[current->dest]->name, current->weight, current->dest);
             current = current->next;
         }
@@ -259,9 +255,3 @@ void print_adj_list(Graph* network){
         printf("\n");
     }
 }
-
-
-
-
-
-
