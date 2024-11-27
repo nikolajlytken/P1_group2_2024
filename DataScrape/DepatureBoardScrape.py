@@ -4,6 +4,13 @@ import os
 
 base_url = "https://www.rejseplanen.dk/api/"
 
+def init_folders():
+    paths = ["DepatureBoard_data/raw","DepatureBoard_data/formated","JourneyDetail_data"]
+    for path in paths:
+        if os.path.exists(path):
+            print(f"{path} already exisists")
+        else:
+            os.makedirs(path,exist_ok=True)
 
 def scrape_locationdetail(station):
     endpoint = "location.name"
@@ -130,6 +137,7 @@ def get_JourneyDetail():
 
 
 def main():
+    init_folders()
     #init api-key 
     with open("key.txt",'r') as akey:
         global key
