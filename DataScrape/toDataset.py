@@ -2,18 +2,25 @@ import os
 import json 
 import math
 
+printed_messages = set()
 #loads a given json file. 
 def load_data(file):
     with open(f"JourneyDetail_data/{file}",'r') as input:
         data = json.load(input)
-        # end = len(data["Stops"]["Stop"])-1
-        # first_stop = data["Stops"]["Stop"][0]["name"]
-        # last_stop = data["Stops"]["Stop"][end]["name"]
-        # trainName = data["Product"][0]["name"]
-        # print(f"train: {trainName} ",first_stop," -> ", last_stop)
         input.close()
         return data
-
+def printstationslist(data):
+        end = len(data["Stops"]["Stop"])-1
+        first_stop = data["Stops"]["Stop"][0]["name"]
+        last_stop = data["Stops"]["Stop"][end]["name"]
+        trainName = data["Product"][0]["name"]
+        message = f"{first_stop} -> {last_stop}"
+        
+        if message not in printed_messages:
+            print(f"train: {trainName}",message)
+            printed_messages.add(message)
+        
+    
 # Finds line in dataset containing the right starting station. 
 def search_dataset():
     print("not done")
@@ -50,11 +57,7 @@ def main():
     files = os.listdir(dir)
 
     for file in files: 
-        load_data(file)
-
-
-
-
+        printstationslist(load_data(file))
 
 
 if __name__ == '__main__':

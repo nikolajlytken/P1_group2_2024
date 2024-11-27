@@ -1,7 +1,7 @@
 import json
 import requests
 import os 
-
+import sys
 base_url = "https://www.rejseplanen.dk/api/"
 
 def init_folders():
@@ -139,12 +139,16 @@ def get_JourneyDetail():
 def main():
     init_folders()
     #init api-key 
-    with open("key.txt",'r') as akey:
-        global key
-        key = akey.readline().rstrip('\n')
+    try:
+        with open("key.txt", 'r') as akey:
+            global key
+            key = akey.readline().rstrip('\n')
+    except FileNotFoundError:
+        print("Error: key.txt file not found, pls create it and try again.")
+        sys.exit(1)  # Terminate the program with a non-zero exit code
 
     # Init list of stations to scrape
-    station_arr = ["København","Aarhus","Roskilde","Fredericia","Aalborg"]
+    station_arr = ["København","Aarhus","Roskilde","Fredericia","Aalborg","esbjerg","thisted","vejle"]
     stationId_dict = {}
 
     print("___________Scraping Depature Boards:___________")
