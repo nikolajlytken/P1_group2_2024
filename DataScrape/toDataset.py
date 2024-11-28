@@ -71,7 +71,18 @@ def create_dataset():
 # Next feature is to add which trainline is connecting them. 
 def write_dataset():
     with open("dataset.txt",'w') as outfile:
-        print("not Done")
+        for station in dataset_dict:
+            length = len(dataset_dict[station]["connectsTo"])
+            outfile.write(station)
+            outfile.write(",")
+            for i in range(length):
+                outfile.write(dataset_dict[station]["connectsTo"][i])
+                outfile.write(",")
+                outfile.write(str(dataset_dict[station]["dist"][i]))
+                outfile.write(",")
+            outfile.write("\n")
+    outfile.close()
+
 
 # calculates distance between 2 sets of coordinates. 
 def calc_dist(c1,c2):
@@ -92,7 +103,7 @@ def calc_dist(c1,c2):
     # Calculate the distance
     distance = radius * c
 
-    return distance
+    return math.ceil(distance)
 
 def main():
     dir = "JourneyDetail_data"
@@ -115,12 +126,8 @@ def main():
     create_dataset()
     print("Created dataset")
 
-    print("________ printing dataset________")
-
-    for station in dataset_dict:
-        print(station)
-        print(dataset_dict[station]["connectsTo"])
-        print(dataset_dict[station]["dist"])
+    print("________ Writing dataset________")
+    write_dataset()
 
 if __name__ == '__main__':
     main()
