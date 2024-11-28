@@ -1,9 +1,5 @@
-CMakeFiles/Program.dir/main.c.o: \
-  /Users/magnuschristiansen/desktop/P1/program/main.c \
-  /Users/magnuschristiansen/desktop/P1/program/data_to_graph.h \
-  /Users/magnuschristiansen/desktop/P1/program/traverse.h \
-  /Users/magnuschristiansen/desktop/P1/program/shortest_path.h \
-  /Users/magnuschristiansen/desktop/P1/program/min_heap/min_heap.h \
+CMakeFiles/Program.dir/min_heap/min_heap.c.o: \
+  /Users/magnuschristiansen/desktop/P1/program/min_heap/min_heap.c \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/_stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/cdefs.h \
@@ -77,4 +73,11 @@ CMakeFiles/Program.dir/main.c.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_wchar_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/malloc/_malloc.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_dev_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_mode_t.h
+  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_mode_t.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/include/limits.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/limits.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/machine/limits.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/arm/limits.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/arm/_limits.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/sys/syslimits.h \
+  /Users/magnuschristiansen/desktop/P1/program/min_heap/min_heap.h

@@ -1,7 +1,7 @@
 Aarhus,Randers,30,Aalborg,50,Viborg,129,Haderslev,121,Esbjerg,12,Odense,140
 Viborg,Randers,40,Aalborg,80,Aarhus,129,Haderslev,69,Esbjerg,149,Odense,99,Copenhagen,68
 Haderslev,Randers,100,Aarhus,121,Viborg,69,Aalborg,57,Esbjerg,89,Odense,92,Copenhagen,123
-Randers,Aarhus,30,Viborg,40,Haderslev,100,Aalborg,33,Esbjerg,130,Odense,46,Copenhagen,11
+Randers,Aarhus,30,Viborg,40,Haderslev,100,Aalborg,33,Esbjerg,130,Odense,46,Copenhagen,300
 Aalborg,Aarhus,50,Viborg,80,Randers,33,Haderslev,57,Esbjerg,46,Odense,78,Copenhagen,84
 Esbjerg,Randers,130,Aarhus,12,Viborg,149,Aalborg,46,Haderslev,89,Odense,91,Copenhagen,48
 Odense,Randers,46,Aarhus,140,Viborg,99,Aalborg,78,Haderslev,92,Esbjerg,91,Copenhagen,59

@@ -13,6 +13,8 @@ add_executable(Program
     main.c
     data_to_graph.c
     traverse.c
+    min_heap/min_heap.c
+    shortest_path.c
 )
 
 # Include header files for compilation

@@ -10,6 +10,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/magnuschristiansen/desktop/P1/program/data_to_graph.c" "CMakeFiles/Program.dir/data_to_graph.c.o" "gcc" "CMakeFiles/Program.dir/data_to_graph.c.o.d"
   "/Users/magnuschristiansen/desktop/P1/program/main.c" "CMakeFiles/Program.dir/main.c.o" "gcc" "CMakeFiles/Program.dir/main.c.o.d"
+  "/Users/magnuschristiansen/desktop/P1/program/min_heap/min_heap.c" "CMakeFiles/Program.dir/min_heap/min_heap.c.o" "gcc" "CMakeFiles/Program.dir/min_heap/min_heap.c.o.d"
+  "/Users/magnuschristiansen/desktop/P1/program/shortest_path.c" "CMakeFiles/Program.dir/shortest_path.c.o" "gcc" "CMakeFiles/Program.dir/shortest_path.c.o.d"
   "/Users/magnuschristiansen/desktop/P1/program/traverse.c" "CMakeFiles/Program.dir/traverse.c.o" "gcc" "CMakeFiles/Program.dir/traverse.c.o.d"
   )
 

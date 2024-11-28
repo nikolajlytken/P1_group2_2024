@@ -31,12 +31,12 @@ Graph* create_graph(char* filename, int num_stations){
             for (int i = 0; i < index; i++){
                 free(network->stations[i]);
             }
+            free(network->stations);
             free(network);
             exit(EXIT_FAILURE);
         }
         char* station_name = strtok(buffer, ",");
         network->stations[index] = create_station(station_name);
-
         index++;
     }
 
@@ -45,6 +45,7 @@ Graph* create_graph(char* filename, int num_stations){
             for (int i = 0; i < index; i++){
                 free(network->stations[i]);
             }
+            free(network->stations);
             free(network);
             exit(EXIT_FAILURE);
         }

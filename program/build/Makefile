@@ -177,6 +177,54 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Program.dir/build.make CMakeFiles/Program.dir/main.c.s
 .PHONY : main.c.s
 
+min_heap/min_heap.o: min_heap/min_heap.c.o
+.PHONY : min_heap/min_heap.o
+
+# target to build an object file
+min_heap/min_heap.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Program.dir/build.make CMakeFiles/Program.dir/min_heap/min_heap.c.o
+.PHONY : min_heap/min_heap.c.o
+
+min_heap/min_heap.i: min_heap/min_heap.c.i
+.PHONY : min_heap/min_heap.i
+
+# target to preprocess a source file
+min_heap/min_heap.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Program.dir/build.make CMakeFiles/Program.dir/min_heap/min_heap.c.i
+.PHONY : min_heap/min_heap.c.i
+
+min_heap/min_heap.s: min_heap/min_heap.c.s
+.PHONY : min_heap/min_heap.s
+
+# target to generate assembly for a file
+min_heap/min_heap.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Program.dir/build.make CMakeFiles/Program.dir/min_heap/min_heap.c.s
+.PHONY : min_heap/min_heap.c.s
+
+shortest_path.o: shortest_path.c.o
+.PHONY : shortest_path.o
+
+# target to build an object file
+shortest_path.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Program.dir/build.make CMakeFiles/Program.dir/shortest_path.c.o
+.PHONY : shortest_path.c.o
+
+shortest_path.i: shortest_path.c.i
+.PHONY : shortest_path.i
+
+# target to preprocess a source file
+shortest_path.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Program.dir/build.make CMakeFiles/Program.dir/shortest_path.c.i
+.PHONY : shortest_path.c.i
+
+shortest_path.s: shortest_path.c.s
+.PHONY : shortest_path.s
+
+# target to generate assembly for a file
+shortest_path.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Program.dir/build.make CMakeFiles/Program.dir/shortest_path.c.s
+.PHONY : shortest_path.c.s
+
 traverse.o: traverse.c.o
 .PHONY : traverse.o
 
@@ -216,6 +264,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... min_heap/min_heap.o"
+	@echo "... min_heap/min_heap.i"
+	@echo "... min_heap/min_heap.s"
+	@echo "... shortest_path.o"
+	@echo "... shortest_path.i"
+	@echo "... shortest_path.s"
 	@echo "... traverse.o"
 	@echo "... traverse.i"
 	@echo "... traverse.s"

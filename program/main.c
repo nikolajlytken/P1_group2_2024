@@ -1,5 +1,6 @@
 #include "data_to_graph.h"
 #include "traverse.h"
+#include "shortest_path.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -30,7 +31,7 @@ int main(int argc, char** argv){
 
 	char temp;
 
-	scanf(" %c", &temp);
+	scanf("%c", &temp);
 
 	printf("Finding path from %s to %s with DFS..\n\n", source_station->name, target_station->name);
 	printf("DFS found path below:\n");
@@ -45,7 +46,7 @@ int main(int argc, char** argv){
 
 	printf("\n\n");
 
-	scanf(" %c", &temp);
+	scanf("%c", &temp);
 
 	printf("Finding path from %s to %s with BFS..\n\n", source_station->name, target_station->name);
 	printf("BFS found path below:\n");
@@ -59,10 +60,16 @@ int main(int argc, char** argv){
 	printf("\nOf length: %d", bfs_len);
 	printf("\n");
 
+	scanf("%c", &temp);
+
+	printf("\n");
+	path_find_init(network->stations, source_node, target_node, network->num_stations);
+
 	for (int i = 0; i < network->num_stations; i++){
 		free_adj_list(network->stations[i]->list_head);
 		free(network->stations[i]);
 	}
+	free(network->stations);
 	free(network);
 }
 
