@@ -28,13 +28,14 @@ def printstationslist(data):
             printed_messages.add(message)
         
 def get_line_info(data):
-    trainName = data["Product"][0]["name"]
-    trains_dict[trainName] = {'stops':[],'coordinates':[]}
-    for station in data["Stops"]["Stop"]:
-        trains_dict[trainName]['stops'].append(station["name"])
-        lon = station["lon"]
-        lat = station["lat"]
-        trains_dict[trainName]['coordinates'].append((lon,lat))
+    if data["Product"][0]["operator"] != "Skånetrafiken":
+        trainName = data["Product"][0]["name"]
+        trains_dict[trainName] = {'stops':[],'coordinates':[]}
+        for station in data["Stops"]["Stop"]:
+            trains_dict[trainName]['stops'].append(station["name"])
+            lon = station["lon"]
+            lat = station["lat"]
+            trains_dict[trainName]['coordinates'].append((lon,lat))
 
 def create_dataset():
     """
@@ -103,7 +104,7 @@ def calc_dist(c1,c2):
     # Calculate the distance
     distance = radius * c
 
-    return math.ceil(distance)
+    return "{:.3f}".format(distance)
 
 def main():
     dir = "JourneyDetail_data"
