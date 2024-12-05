@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+static int current_edge_id = 0;
+
 Graph* create_graph(char* filename, int num_stations){
 	Graph* network = (Graph*)malloc(sizeof(Graph));
     network->num_stations = num_stations;
@@ -79,9 +81,11 @@ Graph* create_graph(char* filename, int num_stations){
                 ListNode* new_node = (ListNode*)malloc(sizeof(ListNode));
                 new_node->idx_in_arr = curr_idx;
                 new_node->weight = atoi(curr);
+                new_node->edge_id = current_edge_id++;
                 new_node->next = NULL;
                 last_node->next = new_node;
                 last_node = new_node;
+
                 numeric = 0;
             }
         }
@@ -142,6 +146,19 @@ void print_adj_list(Graph* network){
     }
 }
 
+ListNode* find_edge_by_id(Graph* network, int edge_id) {
+    for (int i = 0; i < network->num_stations; i++) {
+        ListNode* current = network->stations[i]->list_head;
+        while (current != NULL) {
+            if (current->edge_id == edge_id) {
+                return current;
+            }
+            current = current->next;
+        }
+    }
+    return NULL;
+}
 
-
-
+ListNode* add_score_to_edge(Graph* network, int score) {
+    
+}
