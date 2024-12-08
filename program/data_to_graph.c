@@ -5,6 +5,7 @@
 #include <string.h>
 
 static int current_edge_id = 0;
+int edge_scores[MAX_EDGES][2];
 
 Graph* create_graph(char* filename, int num_stations){
 	Graph* network = (Graph*)malloc(sizeof(Graph));
@@ -146,7 +147,7 @@ void print_adj_list(Graph* network){
     }
 }
 
-ListNode* find_edge_by_id(Graph* network, int edge_id) {
+ListNode* find_edge(Graph* network, int edge_id) {
     for (int i = 0; i < network->num_stations; i++) {
         ListNode* current = network->stations[i]->list_head;
         while (current != NULL) {
@@ -159,6 +160,32 @@ ListNode* find_edge_by_id(Graph* network, int edge_id) {
     return NULL;
 }
 
-ListNode* add_score_to_edge(Graph* network, int score) {
-    
+void initialize_edge_scores(){
+    for (int i = 0; i < MAX_EDGES; i++) {
+        edge_scores[i][0] = -1;
+        edge_scores[i][1] = 0;
+    }
+}
+
+void update_edge_score(int edge_id){
+    for (int i = 0; i < MAX_EDGES; i++){
+        if (edge_scores[i][0] == edge_id){
+            edge_scores[i][1]++;
+            return;
+        }
+        if (edge_scores[i][0] == -1){
+            edge_scores[i][0] = edge_id;
+            edge_scores[i][1] = 1;
+            return;
+        }
+    }
+}
+
+int get_times_visited(int edge_id){
+    for (int i = 0; i < MAX_EDGES; i++){
+        if (edge_scores[i][0] == edge_id){
+            return edge_scores[i][1];
+        }
+    }
+    return -1;
 }

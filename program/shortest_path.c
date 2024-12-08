@@ -42,7 +42,10 @@ int compute_path(Station** stations, MinHeap* heap, int* path_sums, int source, 
 			int new_dist = neighbor->weight + path_sums[curr_node.node];
 			if (path_sums[neighbor->idx_in_arr] > new_dist){
 				path_sums[neighbor->idx_in_arr] = new_dist;
+				
 				decrease_node_val(heap, neighbor->idx_in_arr, path_sums[neighbor->idx_in_arr], heap->positions);
+
+				neighbor->times_visited++;
 			}
 			neighbor = neighbor->next;
 		}
