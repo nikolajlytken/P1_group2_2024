@@ -1,0 +1,3 @@
+/Users/magnuschristiansen/desktop/P1/program/build/CMakeFiles/Program.dir
+/Users/magnuschristiansen/desktop/P1/program/build/CMakeFiles/edit_cache.dir
+/Users/magnuschristiansen/desktop/P1/program/build/CMakeFiles/rebuild_cache.dir
