@@ -1,6 +1,6 @@
 *.exe
 key.txt
 edges.txt
-testedges.txt
+testegdes.txt
 *.json
 __pycache__
