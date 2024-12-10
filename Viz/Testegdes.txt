@@ -1,0 +1,7 @@
+Kalundborg St.,Kalundborg Øst St.,2
+Kalundborg Øst St.,Svebølle St.,11
+Svebølle St.,Jyderup St.,200
+Jyderup St.,Mørkøv St.,6
+Mørkøv St.,Knabstrup St.,3
+Knabstrup St.,Regstrup St.,50
+Regstrup St.,Holbæk St.,7
