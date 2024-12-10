@@ -1,5 +1,6 @@
 *.exe
-*.txt
+key.txt
+edges.txt
+testegdes.txt
 *.json
-*.csv
 __pycache__

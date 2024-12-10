@@ -96,8 +96,7 @@ def main():
 
     egde_arr = edges()
     lines = find_coord_from_edges(egde_arr,station_coords)
-
-    #plotmap(lines,easting,northing)
+    
     plot_lines(lines)
 
 if __name__ == "__main__":
