@@ -166,6 +166,7 @@ def main():
 
     print("___________Getting journeyDetails:___________")
     #Scrape station from all train journeys
+
     get_JourneyDetail()
     print("___________Done with journeyDetails:___________")
     
