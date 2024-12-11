@@ -1,0 +1,334 @@
+Kalundborg Øst St.,Kalundborg St.,0
+Svebølle St.,Kalundborg Øst St.,2
+Kalundborg St.,Kalundborg Øst St.,143
+Jyderup St.,Svebølle St.,3
+Kalundborg Øst St.,Svebølle St.,142
+Mørkøv St.,Jyderup St.,4
+Svebølle St.,Jyderup St.,141
+Knabstrup St.,Mørkøv St.,5
+Jyderup St.,Mørkøv St.,140
+Regstrup St.,Knabstrup St.,6
+Mørkøv St.,Knabstrup St.,139
+Holbæk St.,Regstrup St.,7
+Knabstrup St.,Regstrup St.,138
+Roskilde St.,Holbæk St.,8
+Vipperød St.,Holbæk St.,8
+Regstrup St.,Holbæk St.,137
+Høje Taastrup St.,Roskilde St.,0
+Ringsted St.,Roskilde St.,20
+Trekroner St.,Roskilde St.,117
+Lejre St.,Roskilde St.,132
+Viby Sjælland St.,Roskilde St.,35
+Holbæk St.,Roskilde St.,132
+København H,Høje Taastrup St.,21
+Trekroner St.,Høje Taastrup St.,25
+Valby St.,Høje Taastrup St.,119
+Hedehusene St.,Høje Taastrup St.,26
+Ørestad St.,Høje Taastrup St.,141
+Roskilde St.,Høje Taastrup St.,0
+Nørreport St.,København H,131
+København Syd St.,København H,36
+Ringsted St.,København H,14
+Valby St.,København H,24
+Høje Taastrup St.,København H,21
+Østerport St.,Nørreport St.,132
+København H,Nørreport St.,13
+Snekkersten St.,Helsingør St.,1
+Espergærde St.,Snekkersten St.,2
+Helsingør St.,Snekkersten St.,143
+Humlebæk St.,Espergærde St.,3
+Snekkersten St.,Espergærde St.,142
+Nivå St.,Humlebæk St.,4
+Espergærde St.,Humlebæk St.,141
+Kokkedal St.,Nivå St.,5
+Humlebæk St.,Nivå St.,140
+Rungsted Kyst St.,Kokkedal St.,6
+Nivå St.,Kokkedal St.,139
+Vedbæk St.,Rungsted Kyst St.,7
+Kokkedal St.,Rungsted Kyst St.,138
+Skodsborg St.,Vedbæk St.,8
+Rungsted Kyst St.,Vedbæk St.,137
+Klampenborg St.,Skodsborg St.,9
+Vedbæk St.,Skodsborg St.,136
+Hellerup St.,Klampenborg St.,10
+Skodsborg St.,Klampenborg St.,135
+Østerport St.,Hellerup St.,11
+Klampenborg St.,Hellerup St.,134
+Nørreport St.,Østerport St.,12
+Hellerup St.,Østerport St.,133
+Køge Nord St.,København Syd St.,22
+København H,København Syd St.,108
+Ølby St.,Køge Nord St.,136
+København Syd St.,Køge Nord St.,107
+Ringsted St.,Køge Nord St.,6
+Køge St.,Ølby St.,137
+Køge Nord St.,Ølby St.,8
+Herfølge St.,Køge St.,137
+Ølby St.,Køge St.,7
+Tureby St.,Herfølge St.,138
+Køge St.,Herfølge St.,6
+Haslev St.,Tureby St.,25
+Herfølge St.,Tureby St.,6
+Holme-Olstrup St.,Haslev St.,22
+Tureby St.,Haslev St.,5
+Næstved Nord St.,Holme-Olstrup St.,23
+Haslev St.,Holme-Olstrup St.,118
+Næstved St.,Næstved Nord St.,24
+Holme-Olstrup St.,Næstved Nord St.,121
+Tårnby St.,CPH Lufthavn,1
+Ørestad St.,Tårnby St.,2
+CPH Lufthavn,Tårnby St.,143
+Høje Taastrup St.,Ørestad St.,3
+Tårnby St.,Ørestad St.,142
+Roskilde St.,Trekroner St.,22
+Hedehusene St.,Trekroner St.,117
+Høje Taastrup St.,Trekroner St.,117
+Sorø St.,Ringsted St.,48
+Roskilde St.,Ringsted St.,107
+Køge Nord St.,Ringsted St.,113
+Næstved St.,Ringsted St.,118
+Borup St.,Ringsted St.,107
+Glumsø St.,Ringsted St.,137
+Slagelse St.,Sorø St.,49
+Ringsted St.,Sorø St.,96
+Bramming St.,Esbjerg St.,0
+Spangsbjerg St.,Esbjerg St.,95
+Jerne St.,Esbjerg St.,143
+Vejen St.,Bramming St.,0
+Gørding St.,Bramming St.,53
+Esbjerg St.,Bramming St.,94
+Sejstrup St.,Bramming St.,144
+Lunderskov St.,Vejen St.,57
+Brørup St.,Vejen St.,88
+Bramming St.,Vejen St.,0
+Kolding St.,Lunderskov St.,58
+Vejen St.,Lunderskov St.,87
+Middelfart St.,Kolding St.,59
+Taulov St.,Kolding St.,59
+Lunderskov St.,Kolding St.,86
+Odense St.,Middelfart St.,85
+Fredericia St.,Middelfart St.,60
+Nørre Aaby St.,Middelfart St.,143
+Kolding St.,Middelfart St.,60
+Langeskov St.,Odense St.,91
+Nyborg St.,Odense St.,0
+Middelfart St.,Odense St.,59
+Nyborg St.,Langeskov St.,92
+Odense St.,Langeskov St.,53
+Korsør St.,Nyborg St.,93
+Odense St.,Nyborg St.,0
+Langeskov St.,Nyborg St.,52
+Slagelse St.,Korsør St.,94
+Nyborg St.,Korsør St.,51
+Sorø St.,Slagelse St.,95
+Korsør St.,Slagelse St.,50
+København H,Valby St.,1
+Høje Taastrup St.,Valby St.,1
+Holsted St.,Gørding St.,54
+Bramming St.,Gørding St.,91
+Brørup St.,Holsted St.,55
+Gørding St.,Holsted St.,90
+Vejen St.,Brørup St.,56
+Holsted St.,Brørup St.,89
+Fredericia St.,Taulov St.,60
+Kolding St.,Taulov St.,1
+Børkop St.,Fredericia St.,121
+Taulov St.,Fredericia St.,84
+Kolding St.,Fredericia St.,24
+Middelfart St.,Fredericia St.,25
+Vejle St.,Fredericia St.,0
+Brejning St.,Børkop St.,122
+Fredericia St.,Børkop St.,23
+Vejle St.,Brejning St.,123
+Børkop St.,Brejning St.,22
+Hedensted St.,Vejle St.,124
+Brejning St.,Vejle St.,21
+Fredericia St.,Vejle St.,0
+Horsens St.,Vejle St.,124
+Vejle Sygehus St.,Vejle St.,143
+Horsens St.,Hedensted St.,1
+Vejle St.,Hedensted St.,1
+Skanderborg St.,Horsens St.,126
+Hedensted St.,Horsens St.,19
+Vejle St.,Horsens St.,19
+Viby Jylland St.,Skanderborg St.,128
+Horsens St.,Skanderborg St.,18
+Aarhus H,Skanderborg St.,128
+Alken St.,Skanderborg St.,143
+Aarhus H,Viby Jylland St.,1
+Skanderborg St.,Viby Jylland St.,0
+Hørning St.,Viby Jylland St.,143
+Sjørring St.,Thisted St.,1
+Snedsted St.,Sjørring St.,2
+Hørdum St.,Snedsted St.,3
+Bedsted Thy St.,Hørdum St.,4
+Hurup Thy St.,Bedsted Thy St.,5
+Ydby St.,Hurup Thy St.,6
+Lyngs St.,Ydby St.,7
+Hvidbjerg St.,Lyngs St.,8
+Uglev St.,Hvidbjerg St.,9
+Oddesund Nord St.,Uglev St.,10
+Humlum St.,Oddesund Nord St.,11
+Struer St.,Humlum St.,12
+Viby Jylland St.,Aarhus H,15
+Randers St.,Aarhus H,130
+Skanderborg St.,Aarhus H,0
+Hadsten St.,Aarhus H,130
+Hinnerup St.,Aarhus H,143
+Hobro St.,Randers St.,134
+Aarhus H,Randers St.,11
+Langå St.,Randers St.,11
+Aalborg St.,Hobro St.,0
+Arden St.,Hobro St.,135
+Randers St.,Hobro St.,10
+Aalborg Vestby St.,Aalborg St.,141
+Hobro St.,Aalborg St.,0
+Skalborg St.,Aalborg St.,4
+Lindholm St.,Aalborg Vestby St.,142
+Aalborg St.,Aalborg Vestby St.,3
+Aalborg Lufthavn St.,Lindholm St.,143
+Brønderslev St.,Lindholm St.,144
+Aalborg Vestby St.,Lindholm St.,2
+Vrå St.,Brønderslev St.,145
+Hjørring St.,Vrå St.,146
+Gjesing St.,Spangsbjerg St.,78
+Esbjerg St.,Spangsbjerg St.,49
+Guldager St.,Gjesing St.,79
+Spangsbjerg St.,Gjesing St.,48
+Varde Kaserne St.,Guldager St.,80
+Gjesing St.,Guldager St.,65
+Varde St.,Varde Kaserne St.,81
+Guldager St.,Varde Kaserne St.,64
+Frisvadvej St.,Varde St.,128
+Varde Kaserne St.,Varde St.,63
+Varde Vest St.,Frisvadvej St.,129
+Varde St.,Frisvadvej St.,16
+Boulevarden St.,Varde Vest St.,130
+Frisvadvej St.,Varde Vest St.,15
+Hyllerslev St.,Boulevarden St.,131
+Varde Vest St.,Boulevarden St.,14
+Janderup St.,Hyllerslev St.,132
+Boulevarden St.,Hyllerslev St.,13
+Billum St.,Janderup St.,133
+Hyllerslev St.,Janderup St.,12
+Oksbøl St.,Billum St.,134
+Janderup St.,Billum St.,11
+Baunhøj St.,Oksbøl St.,135
+Billum St.,Oksbøl St.,10
+Vrøgum St.,Baunhøj St.,136
+Oksbøl St.,Baunhøj St.,9
+Jegum St.,Vrøgum St.,137
+Baunhøj St.,Vrøgum St.,8
+Dyreby St.,Jegum St.,138
+Vrøgum St.,Jegum St.,7
+Henne St.,Dyreby St.,139
+Jegum St.,Dyreby St.,6
+Outrup St.,Henne St.,140
+Dyreby St.,Henne St.,5
+Løftgård St.,Outrup St.,141
+Henne St.,Outrup St.,4
+Lunde J St.,Løftgård St.,142
+Outrup St.,Løftgård St.,3
+Nørre Nebel St.,Lunde J St.,143
+Løftgård St.,Lunde J St.,2
+Tølløse St.,Vipperød St.,9
+Holbæk St.,Vipperød St.,4
+Hvalsø St.,Tølløse St.,10
+Vipperød St.,Tølløse St.,135
+Lejre St.,Hvalsø St.,11
+Tølløse St.,Hvalsø St.,134
+Roskilde St.,Lejre St.,4
+Hvalsø St.,Lejre St.,133
+Høje Taastrup St.,Hedehusene St.,1
+Trekroner St.,Hedehusene St.,1
+Vordingborg St.,Næstved St.,144
+Glumsø St.,Næstved St.,6
+Næstved Nord St.,Næstved St.,120
+Nykøbing F St.,Vordingborg St.,145
+Langå St.,Hadsten St.,132
+Aarhus H,Hadsten St.,3
+Randers St.,Langå St.,3
+Ulstrup St.,Langå St.,144
+Hadsten St.,Langå St.,12
+Skørping St.,Arden St.,136
+Hobro St.,Arden St.,9
+Støvring St.,Skørping St.,137
+Arden St.,Skørping St.,8
+Svenstrup St. (Jylland),Støvring St.,138
+Skørping St.,Støvring St.,7
+Skalborg St.,Svenstrup St. (Jylland),139
+Støvring St.,Svenstrup St. (Jylland),6
+Aalborg St.,Skalborg St.,140
+Svenstrup St. (Jylland),Skalborg St.,5
+Ringsted St.,Glumsø St.,5
+Næstved St.,Glumsø St.,1
+Viby Sjælland St.,Borup St.,108
+Ringsted St.,Borup St.,2
+Roskilde St.,Viby Sjælland St.,2
+Borup St.,Viby Sjælland St.,36
+Lindholm St.,Aalborg Lufthavn St.,1
+Ejby St.,Nørre Aaby St.,143
+Gelsted St.,Ejby St.,143
+Aarup St.,Gelsted St.,143
+Tommerup St.,Aarup St.,143
+Odense St.,Tommerup St.,5
+Jelling St.,Vejle Sygehus St.,143
+Give St.,Jelling St.,143
+Thyregod St.,Give St.,143
+Brande St.,Thyregod St.,143
+Herning St.,Brande St.,114
+Gødstrup St.,Herning St.,144
+Herning Messecenter St.,Herning St.,143
+Vildbjerg St.,Gødstrup St.,145
+Aulum St.,Vildbjerg St.,146
+Holstebro St.,Aulum St.,147
+Hjerm St.,Holstebro St.,148
+Struer St.,Hjerm St.,134
+Hadsten St.,Hinnerup St.,1
+Bjerringbro St.,Ulstrup St.,145
+Rødkærsbro St.,Bjerringbro St.,146
+Viborg St.,Rødkærsbro St.,147
+Sparkær St.,Viborg St.,148
+Stoholm St.,Sparkær St.,149
+Højslev St.,Stoholm St.,150
+Skive St.,Højslev St.,151
+Vinderup St.,Skive St.,152
+Struer St.,Vinderup St.,24
+Lunde J St.,Nørre Nebel St.,1
+Tjæreborg St.,Jerne St.,143
+Bramming St.,Tjæreborg St.,52
+Gredstedbro St.,Sejstrup St.,145
+Ribe Nørremark St.,Gredstedbro St.,146
+Ribe St.,Ribe Nørremark St.,147
+Hviding St.,Ribe St.,148
+Rejsby St.,Hviding St.,149
+Brøns St.,Rejsby St.,150
+Skærbæk St.,Brøns St.,151
+Døstrup St. (Sønderjylland),Skærbæk St.,152
+Bredebro St.,Døstrup St. (Sønderjylland),153
+Visby St.,Bredebro St.,154
+Tønder Nord St.,Visby St.,155
+Tønder St.,Tønder Nord St.,156
+Skanderborg St.,Hørning St.,17
+Ry St.,Alken St.,143
+Laven St.,Ry St.,143
+Svejbæk St.,Laven St.,143
+Silkeborg St.,Svejbæk St.,143
+Engesvang St.,Silkeborg St.,143
+Bording St.,Engesvang St.,143
+Ikast St.,Bording St.,143
+Hammerum St.,Ikast St.,143
+Birk Centerpark St.,Hammerum St.,143
+Herning St.,Birk Centerpark St.,29
+Studsgård St.,Herning Messecenter St.,143
+Kibæk St.,Studsgård St.,143
+Troldhede St.,Kibæk St.,143
+Borris St.,Troldhede St.,143
+Skjern St.,Borris St.,143
+Tarm St.,Skjern St.,143
+Ølgod St.,Tarm St.,143
+Gårde St.,Ølgod St.,143
+Tistrup St.,Gårde St.,143
+Sig St.,Tistrup St.,143
+Varde Nord St.,Sig St.,143
+Varde St.,Varde Nord St.,46

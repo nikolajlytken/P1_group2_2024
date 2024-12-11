@@ -32,7 +32,8 @@ def get_line_info(data):
         trainName = data["Product"][0]["name"]
         trains_dict[trainName] = {'stops':[],'coordinates':[]}
         for station in data["Stops"]["Stop"]:
-            trains_dict[trainName]['stops'].append(station["name"])
+            cleaned_name = station["name"].replace(" st.", "").replace(" St.", "").strip()
+            trains_dict[trainName]['stops'].append(cleaned_name)
             lon = station["lon"]
             lat = station["lat"]
             trains_dict[trainName]['coordinates'].append((lon,lat))
