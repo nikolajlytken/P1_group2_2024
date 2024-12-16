@@ -1,76 +1,59 @@
 #include "data_to_graph.h"
-#include "traverse.h"
 #include "shortest_path.h"
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
+void output_file(Graph* network);
+double calc_passengers(Graph* network, char* a, char* b);
 
 int main(int argc, char** argv){
-	printf("Reading data and initializing graph..\n");
 	Graph* network = create_graph(argv[1], atoi(argv[2]));
-	printf("...\n");
-	printf("Graph visually as adjacency-list: \n");
-	print_adj_list(network);
 
-	int source_node = get_idx(network->stations, network->num_stations, argv[3]);
-	int target_node = get_idx(network->stations, network->num_stations, argv[4]);
-	Station* source_station = network->stations[source_node];
-	Station* target_station = network->stations[target_node];
-
-	int visited_dfs[network->num_stations];
-	int visited_bfs[network->num_stations];
-	int path_dfs[network->num_stations];
-	int path_bfs[network->num_stations];
-
-	for (int j = 0; j < network->num_stations; j++){
-		visited_dfs[j] = 0;
-		visited_bfs[j] = 0;
-		path_dfs[j] = -1;
-		path_bfs[j] = -1;
-	}
-
-	char temp;
-
-	scanf("%c", &temp);
-
-	printf("Finding path from %s to %s with DFS..\n\n", source_station->name, target_station->name);
-	printf("DFS found path below:\n");
-	int dfs_index = dfs(network->stations, source_node, target_node, visited_dfs, path_dfs, 0);
-	for (int j = 0; j <= dfs_index; j++){
-		printf(" %s", network->stations[path_dfs[j]]->name);
-		if (j < dfs_index){
-			printf(", ");
+	for (int i = 0; i < network->num_stations; i++){
+		int path_cost = path_find_init(network, i, (i + 1) % network->num_stations, network->num_stations);
+		if (path_cost == 2147483647){
+			path_cost = -1;
 		}
+		continue;
 	}
-	printf("\nOf length: %d", dfs_index + 1);
-
-	printf("\n\n");
-
-	scanf("%c", &temp);
-
-	printf("Finding path from %s to %s with BFS..\n\n", source_station->name, target_station->name);
-	printf("BFS found path below:\n");
-	int bfs_len = bfs(network->stations, visited_bfs, source_node, target_node, path_bfs, network->num_stations);
-	for (int i = bfs_len - 1; i >= 0; i--){
-		printf(" %s", network->stations[path_bfs[i]]->name);
-		if (i > 0){
-			printf(", ");
-		}
-	}
-	printf("\nOf length: %d", bfs_len);
-	printf("\n");
-
-	scanf("%c", &temp);
-
-	printf("\n");
-	path_find_init(network->stations, source_node, target_node, network->num_stations);
-
+	output_file(network);
 	for (int i = 0; i < network->num_stations; i++){
 		free_adj_list(network->stations[i]->list_head);
 		free(network->stations[i]);
 	}
 	free(network->stations);
 	free(network);
+}
+
+void output_file(Graph* network){
+	FILE* out = fopen("output.csv", "w");
+	for (int i = 0; i < 158; i++){
+		Station* station = network->stations[i];
+		ListNode* curr = network->stations[i]->list_head->next;
+		while (curr != NULL){
+			double output_val = calc_passengers(network, station->name, network->stations[curr->idx_in_arr]->name) * (double)curr->times_visited;
+            fprintf(out, "%s,%s,%.3lf\n", network->stations[curr->idx_in_arr]->name, network->stations[i]->name, output_val);
+			curr = curr->next;
+        }
+	}
+	fclose(out);
+}
+
+double calc_passengers(Graph* network, char* a, char* b){
+	int pass_a = 0;
+	int pass_b = 0;
+
+	for (int i = 0; i < network->num_stations; i++){
+		if (strcmp(network->stations[i]->name, a)){
+			pass_a = network->stations[i]->passengers;
+		}
+		else if (strcmp(network->stations[i]->name, b)){
+			pass_b = network->stations[i]->passengers;
+		}
+	}
+	return (double)(pass_a + pass_b) / 2.0;
 }
 
 
