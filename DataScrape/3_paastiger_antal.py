@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 def import_csv(filename='paastiger_data.csv'):
     try:
         csv = pd.read_csv(f'{filename}', sep=';')

@@ -83,6 +83,9 @@ def write_dataset():
                 outfile.write(str(dataset_dict[station]["dist"][i]))
                 outfile.write(",")
             outfile.write("\n")
+            missing = ['Varde','Struer','Nykøbing F','Hjørring']
+            for station in missing:
+                outfile.write(station,',','0')
     outfile.close()
 
 

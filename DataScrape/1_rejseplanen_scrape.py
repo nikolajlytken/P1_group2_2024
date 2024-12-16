@@ -148,7 +148,7 @@ def main():
         sys.exit(1)  # Terminate the program with a non-zero exit code
 
     # Init list of stations to scrape
-    station_arr = ["København","Aarhus","Roskilde","Fredericia","Aalborg","esbjerg","thisted","vejle"]
+    station_arr = ["København","Aarhus","Roskilde","Fredericia","Aalborg","esbjerg","vejle"]
     stationId_dict = {}
 
     print("___________Scraping Depature Boards:___________")
