@@ -1,9 +1,9 @@
-#define MAX_SIZE 100
-#define NUM_STATIONS 8
+#define MAX_SIZE 158
+#define NUM_STATIONS 158
 
 typedef struct HeapNode {
     int node;
-    int distance;
+    double distance;
 } HeapNode;
 
 typedef struct MinHeap {
@@ -18,4 +18,4 @@ void heapify_down(MinHeap* heap, int index);
 HeapNode extract_min(MinHeap *heap);
 void heapify_up(MinHeap* heap, int index, int* positions);
 void insert_element(MinHeap* heap, HeapNode value, int* positions);
-void decrease_node_val(MinHeap* heap, int node_index, int new_distance, int* positions);
+void decrease_node_val(MinHeap* heap, int node_index, double new_distance, int* positions);
