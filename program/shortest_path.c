@@ -6,43 +6,65 @@
 #include "shortest_path.h"
 
 
-int path_find_init(Station** stations, int source, int target, int num_nodes){
-	MinHeap* heap = initialize_heap(source, num_nodes);
-	int path_sums[num_nodes];
-	for (int i = 0; i < num_nodes; i++){
-		if (i != source){
-			path_sums[i] = INT_MAX;
-		}
-		else {
-			path_sums[i] = 0;
-		}
-	}
-	int path_to_target = compute_path(stations, heap, path_sums, source, target);
+int path_find_init(Graph* network, int source, int target, int num_nodes) {
+    MinHeap* heap = initialize_heap(source, num_nodes);
 
-	printf("Source is %s\n\n", stations[source]->name);
+    int** paths_id = malloc(num_nodes * sizeof(int *));
+    for (int i = 0; i < num_nodes; i++) {
+        paths_id[i] = malloc(num_nodes * sizeof(int));
+    }
 
-	for (int i = 0; i < num_nodes; i++){
-		printf("Path-cost from source to %s is %d\n", stations[i]->name, path_sums[i]);
-	}
+    for (int i = 0; i < num_nodes; i++) {
+        for (int j = 0; j < num_nodes; j++) {
+            paths_id[i][j] = -1;
+        }
+    }
 
-	return path_to_target;
+    double* path_sums = malloc(num_nodes * sizeof(double));
+    for (int i = 0; i < num_nodes; i++) {
+        if (i != source) {
+            path_sums[i] = (double)INT_MAX;
+        } else {
+            path_sums[i] = 0.0;
+        }
+    }
+
+    double path_to_target = compute_path(network->stations, heap, path_sums, source, target, paths_id);
+
+    for (int i = 0; i < num_nodes; i++){
+    	int j = 0;
+    	while (paths_id[i][j] != -1){
+    		ListNode* curr = find_edge(network, paths_id[i][j]);
+    		curr->times_visited++;
+    		j++;
+    	}
+    }
+
+    for (int i = 0; i < num_nodes; i++){
+        free(paths_id[i]);
+    }
+    free(paths_id);
+    free(path_sums);
+
+    return path_to_target;
 }
 
-int compute_path(Station** stations, MinHeap* heap, int* path_sums, int source, int target){
+int compute_path(Station** stations, MinHeap* heap, double* path_sums, int source, int target, int** paths_id){
 	while (heap->size != 0){
 		HeapNode curr_node = extract_min(heap);
 
-		if (path_sums[curr_node.node] == INT_MAX){
+		if (path_sums[curr_node.node] == (double)INT_MAX){
 			break;
 		}
 
 		ListNode* neighbor = stations[curr_node.node]->list_head->next;
 
 		while (neighbor){
-			int new_dist = neighbor->weight + path_sums[curr_node.node];
+			double new_dist = neighbor->weight + path_sums[curr_node.node];
 			if (path_sums[neighbor->idx_in_arr] > new_dist){
 				path_sums[neighbor->idx_in_arr] = new_dist;
 				decrease_node_val(heap, neighbor->idx_in_arr, path_sums[neighbor->idx_in_arr], heap->positions);
+				update_paths_id(stations, paths_id, curr_node.node, neighbor->idx_in_arr);
 			}
 			neighbor = neighbor->next;
 		}
@@ -50,7 +72,17 @@ int compute_path(Station** stations, MinHeap* heap, int* path_sums, int source, 
 	return path_sums[target];
 }
 
-
+void update_paths_id(Station** stations, int** paths_id, int from, int to){
+	ListNode* curr = stations[from]->list_head->next;
+	while (curr->idx_in_arr != to){
+		curr = curr->next;
+	}
+	int i = 0;
+	while (paths_id[to][i + 1] != -1){
+		i++;
+	}
+	paths_id[to][i] = curr->edge_id;
+}
 
 
 
