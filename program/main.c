@@ -28,8 +28,8 @@ int main(int argc, char** argv){
 }
 
 void output_file(Graph* network){
-	FILE* out = fopen("output.csv", "w");
-	for (int i = 0; i < 158; i++){
+	FILE* out = fopen("output.txt", "w");
+	for (int i = 0; i < network->num_stations; i++){
 		Station* station = network->stations[i];
 		ListNode* curr = network->stations[i]->list_head->next;
 		while (curr != NULL){

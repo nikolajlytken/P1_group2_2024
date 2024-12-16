@@ -1,6 +1,7 @@
 import pandas as pd 
 import matplotlib.pyplot as plt
 from pyproj import Transformer
+import math 
 
 def init_transformer(station_coords):
     crs_wgs84 = "EPSG:4326"      # WGS84 Latitude/Longitude
@@ -15,7 +16,7 @@ def init_transformer(station_coords):
 
 def edges():
     edges_arr = []
-    with open("output.txt",'r') as edges:
+    with open("../program/output.txt",'r') as edges:
         for line in edges:
             edges_arr.append(line.strip().split(','))
     edges.close()
@@ -35,10 +36,6 @@ def find_coord_from_edges(edges_arr,station_coords):
 
     return out
 
-def float_to_rgb_colormap(value, colormap_name='viridis'):
-    rgb = plt.cm.viridis(value)  # This returns values in 0-1 range
-    return rgb
-
 
 def plot_lines(lines):
     fig, ax = plt.subplots()
@@ -49,10 +46,11 @@ def plot_lines(lines):
         
         # Convert string to float and normalize to 0-1 range for colormap
         try:
-            weight = float(triples[2])
+            weight = float(triples[2]) / 1000000
             # Assuming weights are between 0-100, normalize to 0-1
-            normalized_weight = weight / 100.0
-            color = plt.cm.viridis(normalized_weight)
+            normalized_weight = 1 / (1 + math.exp(-weight))
+            print(normalized_weight)
+            color = plt.cm.plasma(normalized_weight)
         except ValueError:
             # Use default color if weight cannot be converted to float
             color = 'blue'
@@ -79,11 +77,11 @@ def plotmap(easting,northing):
 def main():
     station_coords = pd.read_csv('Coordinates.csv')
 
-    easting,northing = init_transformer(station_coords)
-
     egde_arr = edges()
     lines = find_coord_from_edges(egde_arr,station_coords)
     
+    print(lines)
+
     plot_lines(lines)
 
 if __name__ == "__main__":

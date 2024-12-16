@@ -156,18 +156,6 @@ Alken,Skanderborg,10129095.000
 Aarhus H,Viby Jylland,37136.000
 Skanderborg,Viby Jylland,0.000
 Hørning,Viby Jylland,3416512.000
-Sjørring,Thisted,28941.000
-Snedsted,Sjørring,7784.000
-Hørdum,Snedsted,23569.500
-Bedsted Thy,Hørdum,10900.000
-Hurup Thy,Bedsted Thy,32842.500
-Ydby,Hurup Thy,80895.000
-Lyngs,Ydby,14693.000
-Hvidbjerg,Lyngs,18088.000
-Uglev,Hvidbjerg,100660.500
-Oddesund Nord,Uglev,22345.000
-Humlum,Oddesund Nord,3602.500
-Struer,Humlum,56142.000
 Viby Jylland,Aarhus H,6795232.500
 Randers,Aarhus H,35788224.500
 Skanderborg,Aarhus H,0.000

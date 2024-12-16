@@ -1,334 +1,281 @@
-Kalundborg Øst St.,Kalundborg St.,0
-Svebølle St.,Kalundborg Øst St.,2
-Kalundborg St.,Kalundborg Øst St.,143
-Jyderup St.,Svebølle St.,3
-Kalundborg Øst St.,Svebølle St.,142
-Mørkøv St.,Jyderup St.,4
-Svebølle St.,Jyderup St.,141
-Knabstrup St.,Mørkøv St.,5
-Jyderup St.,Mørkøv St.,140
-Regstrup St.,Knabstrup St.,6
-Mørkøv St.,Knabstrup St.,139
-Holbæk St.,Regstrup St.,7
-Knabstrup St.,Regstrup St.,138
-Roskilde St.,Holbæk St.,8
-Vipperød St.,Holbæk St.,8
-Regstrup St.,Holbæk St.,137
-Høje Taastrup St.,Roskilde St.,0
-Ringsted St.,Roskilde St.,20
-Trekroner St.,Roskilde St.,117
-Lejre St.,Roskilde St.,132
-Viby Sjælland St.,Roskilde St.,35
-Holbæk St.,Roskilde St.,132
-København H,Høje Taastrup St.,21
-Trekroner St.,Høje Taastrup St.,25
-Valby St.,Høje Taastrup St.,119
-Hedehusene St.,Høje Taastrup St.,26
-Ørestad St.,Høje Taastrup St.,141
-Roskilde St.,Høje Taastrup St.,0
-Nørreport St.,København H,131
-København Syd St.,København H,36
-Ringsted St.,København H,14
-Valby St.,København H,24
-Høje Taastrup St.,København H,21
-Østerport St.,Nørreport St.,132
-København H,Nørreport St.,13
-Snekkersten St.,Helsingør St.,1
-Espergærde St.,Snekkersten St.,2
-Helsingør St.,Snekkersten St.,143
-Humlebæk St.,Espergærde St.,3
-Snekkersten St.,Espergærde St.,142
-Nivå St.,Humlebæk St.,4
-Espergærde St.,Humlebæk St.,141
-Kokkedal St.,Nivå St.,5
-Humlebæk St.,Nivå St.,140
-Rungsted Kyst St.,Kokkedal St.,6
-Nivå St.,Kokkedal St.,139
-Vedbæk St.,Rungsted Kyst St.,7
-Kokkedal St.,Rungsted Kyst St.,138
-Skodsborg St.,Vedbæk St.,8
-Rungsted Kyst St.,Vedbæk St.,137
-Klampenborg St.,Skodsborg St.,9
-Vedbæk St.,Skodsborg St.,136
-Hellerup St.,Klampenborg St.,10
-Skodsborg St.,Klampenborg St.,135
-Østerport St.,Hellerup St.,11
-Klampenborg St.,Hellerup St.,134
-Nørreport St.,Østerport St.,12
-Hellerup St.,Østerport St.,133
-Køge Nord St.,København Syd St.,22
-København H,København Syd St.,108
-Ølby St.,Køge Nord St.,136
-København Syd St.,Køge Nord St.,107
-Ringsted St.,Køge Nord St.,6
-Køge St.,Ølby St.,137
-Køge Nord St.,Ølby St.,8
-Herfølge St.,Køge St.,137
-Ølby St.,Køge St.,7
-Tureby St.,Herfølge St.,138
-Køge St.,Herfølge St.,6
-Haslev St.,Tureby St.,25
-Herfølge St.,Tureby St.,6
-Holme-Olstrup St.,Haslev St.,22
-Tureby St.,Haslev St.,5
-Næstved Nord St.,Holme-Olstrup St.,23
-Haslev St.,Holme-Olstrup St.,118
-Næstved St.,Næstved Nord St.,24
-Holme-Olstrup St.,Næstved Nord St.,121
-Tårnby St.,CPH Lufthavn,1
-Ørestad St.,Tårnby St.,2
-CPH Lufthavn,Tårnby St.,143
-Høje Taastrup St.,Ørestad St.,3
-Tårnby St.,Ørestad St.,142
-Roskilde St.,Trekroner St.,22
-Hedehusene St.,Trekroner St.,117
-Høje Taastrup St.,Trekroner St.,117
-Sorø St.,Ringsted St.,48
-Roskilde St.,Ringsted St.,107
-Køge Nord St.,Ringsted St.,113
-Næstved St.,Ringsted St.,118
-Borup St.,Ringsted St.,107
-Glumsø St.,Ringsted St.,137
-Slagelse St.,Sorø St.,49
-Ringsted St.,Sorø St.,96
-Bramming St.,Esbjerg St.,0
-Spangsbjerg St.,Esbjerg St.,95
-Jerne St.,Esbjerg St.,143
-Vejen St.,Bramming St.,0
-Gørding St.,Bramming St.,53
-Esbjerg St.,Bramming St.,94
-Sejstrup St.,Bramming St.,144
-Lunderskov St.,Vejen St.,57
-Brørup St.,Vejen St.,88
-Bramming St.,Vejen St.,0
-Kolding St.,Lunderskov St.,58
-Vejen St.,Lunderskov St.,87
-Middelfart St.,Kolding St.,59
-Taulov St.,Kolding St.,59
-Lunderskov St.,Kolding St.,86
-Odense St.,Middelfart St.,85
-Fredericia St.,Middelfart St.,60
-Nørre Aaby St.,Middelfart St.,143
-Kolding St.,Middelfart St.,60
-Langeskov St.,Odense St.,91
-Nyborg St.,Odense St.,0
-Middelfart St.,Odense St.,59
-Nyborg St.,Langeskov St.,92
-Odense St.,Langeskov St.,53
-Korsør St.,Nyborg St.,93
-Odense St.,Nyborg St.,0
-Langeskov St.,Nyborg St.,52
-Slagelse St.,Korsør St.,94
-Nyborg St.,Korsør St.,51
-Sorø St.,Slagelse St.,95
-Korsør St.,Slagelse St.,50
-København H,Valby St.,1
-Høje Taastrup St.,Valby St.,1
-Holsted St.,Gørding St.,54
-Bramming St.,Gørding St.,91
-Brørup St.,Holsted St.,55
-Gørding St.,Holsted St.,90
-Vejen St.,Brørup St.,56
-Holsted St.,Brørup St.,89
-Fredericia St.,Taulov St.,60
-Kolding St.,Taulov St.,1
-Børkop St.,Fredericia St.,121
-Taulov St.,Fredericia St.,84
-Kolding St.,Fredericia St.,24
-Middelfart St.,Fredericia St.,25
-Vejle St.,Fredericia St.,0
-Brejning St.,Børkop St.,122
-Fredericia St.,Børkop St.,23
-Vejle St.,Brejning St.,123
-Børkop St.,Brejning St.,22
-Hedensted St.,Vejle St.,124
-Brejning St.,Vejle St.,21
-Fredericia St.,Vejle St.,0
-Horsens St.,Vejle St.,124
-Vejle Sygehus St.,Vejle St.,143
-Horsens St.,Hedensted St.,1
-Vejle St.,Hedensted St.,1
-Skanderborg St.,Horsens St.,126
-Hedensted St.,Horsens St.,19
-Vejle St.,Horsens St.,19
-Viby Jylland St.,Skanderborg St.,128
-Horsens St.,Skanderborg St.,18
-Aarhus H,Skanderborg St.,128
-Alken St.,Skanderborg St.,143
-Aarhus H,Viby Jylland St.,1
-Skanderborg St.,Viby Jylland St.,0
-Hørning St.,Viby Jylland St.,143
-Sjørring St.,Thisted St.,1
-Snedsted St.,Sjørring St.,2
-Hørdum St.,Snedsted St.,3
-Bedsted Thy St.,Hørdum St.,4
-Hurup Thy St.,Bedsted Thy St.,5
-Ydby St.,Hurup Thy St.,6
-Lyngs St.,Ydby St.,7
-Hvidbjerg St.,Lyngs St.,8
-Uglev St.,Hvidbjerg St.,9
-Oddesund Nord St.,Uglev St.,10
-Humlum St.,Oddesund Nord St.,11
-Struer St.,Humlum St.,12
-Viby Jylland St.,Aarhus H,15
-Randers St.,Aarhus H,130
-Skanderborg St.,Aarhus H,0
-Hadsten St.,Aarhus H,130
-Hinnerup St.,Aarhus H,143
-Hobro St.,Randers St.,134
-Aarhus H,Randers St.,11
-Langå St.,Randers St.,11
-Aalborg St.,Hobro St.,0
-Arden St.,Hobro St.,135
-Randers St.,Hobro St.,10
-Aalborg Vestby St.,Aalborg St.,141
-Hobro St.,Aalborg St.,0
-Skalborg St.,Aalborg St.,4
-Lindholm St.,Aalborg Vestby St.,142
-Aalborg St.,Aalborg Vestby St.,3
-Aalborg Lufthavn St.,Lindholm St.,143
-Brønderslev St.,Lindholm St.,144
-Aalborg Vestby St.,Lindholm St.,2
-Vrå St.,Brønderslev St.,145
-Hjørring St.,Vrå St.,146
-Gjesing St.,Spangsbjerg St.,78
-Esbjerg St.,Spangsbjerg St.,49
-Guldager St.,Gjesing St.,79
-Spangsbjerg St.,Gjesing St.,48
-Varde Kaserne St.,Guldager St.,80
-Gjesing St.,Guldager St.,65
-Varde St.,Varde Kaserne St.,81
-Guldager St.,Varde Kaserne St.,64
-Frisvadvej St.,Varde St.,128
-Varde Kaserne St.,Varde St.,63
-Varde Vest St.,Frisvadvej St.,129
-Varde St.,Frisvadvej St.,16
-Boulevarden St.,Varde Vest St.,130
-Frisvadvej St.,Varde Vest St.,15
-Hyllerslev St.,Boulevarden St.,131
-Varde Vest St.,Boulevarden St.,14
-Janderup St.,Hyllerslev St.,132
-Boulevarden St.,Hyllerslev St.,13
-Billum St.,Janderup St.,133
-Hyllerslev St.,Janderup St.,12
-Oksbøl St.,Billum St.,134
-Janderup St.,Billum St.,11
-Baunhøj St.,Oksbøl St.,135
-Billum St.,Oksbøl St.,10
-Vrøgum St.,Baunhøj St.,136
-Oksbøl St.,Baunhøj St.,9
-Jegum St.,Vrøgum St.,137
-Baunhøj St.,Vrøgum St.,8
-Dyreby St.,Jegum St.,138
-Vrøgum St.,Jegum St.,7
-Henne St.,Dyreby St.,139
-Jegum St.,Dyreby St.,6
-Outrup St.,Henne St.,140
-Dyreby St.,Henne St.,5
-Løftgård St.,Outrup St.,141
-Henne St.,Outrup St.,4
-Lunde J St.,Løftgård St.,142
-Outrup St.,Løftgård St.,3
-Nørre Nebel St.,Lunde J St.,143
-Løftgård St.,Lunde J St.,2
-Tølløse St.,Vipperød St.,9
-Holbæk St.,Vipperød St.,4
-Hvalsø St.,Tølløse St.,10
-Vipperød St.,Tølløse St.,135
-Lejre St.,Hvalsø St.,11
-Tølløse St.,Hvalsø St.,134
-Roskilde St.,Lejre St.,4
-Hvalsø St.,Lejre St.,133
-Høje Taastrup St.,Hedehusene St.,1
-Trekroner St.,Hedehusene St.,1
-Vordingborg St.,Næstved St.,144
-Glumsø St.,Næstved St.,6
-Næstved Nord St.,Næstved St.,120
-Nykøbing F St.,Vordingborg St.,145
-Langå St.,Hadsten St.,132
-Aarhus H,Hadsten St.,3
-Randers St.,Langå St.,3
-Ulstrup St.,Langå St.,144
-Hadsten St.,Langå St.,12
-Skørping St.,Arden St.,136
-Hobro St.,Arden St.,9
-Støvring St.,Skørping St.,137
-Arden St.,Skørping St.,8
-Svenstrup St. (Jylland),Støvring St.,138
-Skørping St.,Støvring St.,7
-Skalborg St.,Svenstrup St. (Jylland),139
-Støvring St.,Svenstrup St. (Jylland),6
-Aalborg St.,Skalborg St.,140
-Svenstrup St. (Jylland),Skalborg St.,5
-Ringsted St.,Glumsø St.,5
-Næstved St.,Glumsø St.,1
-Viby Sjælland St.,Borup St.,108
-Ringsted St.,Borup St.,2
-Roskilde St.,Viby Sjælland St.,2
-Borup St.,Viby Sjælland St.,36
-Lindholm St.,Aalborg Lufthavn St.,1
-Ejby St.,Nørre Aaby St.,143
-Gelsted St.,Ejby St.,143
-Aarup St.,Gelsted St.,143
-Tommerup St.,Aarup St.,143
-Odense St.,Tommerup St.,5
-Jelling St.,Vejle Sygehus St.,143
-Give St.,Jelling St.,143
-Thyregod St.,Give St.,143
-Brande St.,Thyregod St.,143
-Herning St.,Brande St.,114
-Gødstrup St.,Herning St.,144
-Herning Messecenter St.,Herning St.,143
-Vildbjerg St.,Gødstrup St.,145
-Aulum St.,Vildbjerg St.,146
-Holstebro St.,Aulum St.,147
-Hjerm St.,Holstebro St.,148
-Struer St.,Hjerm St.,134
-Hadsten St.,Hinnerup St.,1
-Bjerringbro St.,Ulstrup St.,145
-Rødkærsbro St.,Bjerringbro St.,146
-Viborg St.,Rødkærsbro St.,147
-Sparkær St.,Viborg St.,148
-Stoholm St.,Sparkær St.,149
-Højslev St.,Stoholm St.,150
-Skive St.,Højslev St.,151
-Vinderup St.,Skive St.,152
-Struer St.,Vinderup St.,24
-Lunde J St.,Nørre Nebel St.,1
-Tjæreborg St.,Jerne St.,143
-Bramming St.,Tjæreborg St.,52
-Gredstedbro St.,Sejstrup St.,145
-Ribe Nørremark St.,Gredstedbro St.,146
-Ribe St.,Ribe Nørremark St.,147
-Hviding St.,Ribe St.,148
-Rejsby St.,Hviding St.,149
-Brøns St.,Rejsby St.,150
-Skærbæk St.,Brøns St.,151
-Døstrup St. (Sønderjylland),Skærbæk St.,152
-Bredebro St.,Døstrup St. (Sønderjylland),153
-Visby St.,Bredebro St.,154
-Tønder Nord St.,Visby St.,155
-Tønder St.,Tønder Nord St.,156
-Skanderborg St.,Hørning St.,17
-Ry St.,Alken St.,143
-Laven St.,Ry St.,143
-Svejbæk St.,Laven St.,143
-Silkeborg St.,Svejbæk St.,143
-Engesvang St.,Silkeborg St.,143
-Bording St.,Engesvang St.,143
-Ikast St.,Bording St.,143
-Hammerum St.,Ikast St.,143
-Birk Centerpark St.,Hammerum St.,143
-Herning St.,Birk Centerpark St.,29
-Studsgård St.,Herning Messecenter St.,143
-Kibæk St.,Studsgård St.,143
-Troldhede St.,Kibæk St.,143
-Borris St.,Troldhede St.,143
-Skjern St.,Borris St.,143
-Tarm St.,Skjern St.,143
-Ølgod St.,Tarm St.,143
-Gårde St.,Ølgod St.,143
-Tistrup St.,Gårde St.,143
-Sig St.,Tistrup St.,143
-Varde Nord St.,Sig St.,143
-Varde St.,Varde Nord St.,46
+Kalundborg Øst,Kalundborg,0.000
+Svebølle,Kalundborg Øst,41090.000
+Kalundborg,Kalundborg Øst,1890140.000
+Jyderup,Svebølle,65172.000
+Kalundborg Øst,Svebølle,1976884.000
+Mørkøv,Jyderup,290138.000
+Svebølle,Jyderup,6528105.000
+Knabstrup,Mørkøv,193260.000
+Jyderup,Mørkøv,3440028.000
+Regstrup,Knabstrup,87207.000
+Mørkøv,Knabstrup,1279036.000
+Holbæk,Regstrup,170583.000
+Knabstrup,Regstrup,2120103.000
+Roskilde,Holbæk,4050048.000
+Vipperød,Holbæk,4050048.000
+Regstrup,Holbæk,43538016.000
+Høje Taastrup,Roskilde,0.000
+Ringsted,Roskilde,34595920.000
+Trekroner,Roskilde,114166536.000
+Lejre,Roskilde,140113476.000
+Viby Sjælland,Roskilde,60542860.000
+Holbæk,Roskilde,140113476.000
+København H,Høje Taastrup,23011065.000
+Trekroner,Høje Taastrup,27394125.000
+Valby,Høje Taastrup,74512020.000
+Hedehusene,Høje Taastrup,28489890.000
+Ørestad,Høje Taastrup,98618850.000
+Roskilde,Høje Taastrup,0.000
+Nørreport,København H,485682240.000
+København Syd,København H,218557008.000
+Ringsted,København H,84994392.000
+Valby,København H,145704672.000
+Høje Taastrup,København H,127491588.000
+Østerport,Nørreport,143188236.000
+København H,Nørreport,22980828.000
+Snekkersten,Helsingør,473547.500
+Espergærde,Snekkersten,227906.000
+Helsingør,Snekkersten,10483676.000
+Humlebæk,Espergærde,806022.000
+Snekkersten,Espergærde,24449334.000
+Nivå,Humlebæk,1442982.000
+Espergærde,Humlebæk,32467095.000
+Kokkedal,Nivå,902142.500
+Humlebæk,Nivå,16058136.500
+Rungsted Kyst,Kokkedal,2513295.000
+Nivå,Kokkedal,36861660.000
+Vedbæk,Rungsted Kyst,796103.000
+Kokkedal,Rungsted Kyst,9894423.000
+Skodsborg,Vedbæk,731884.000
+Rungsted Kyst,Vedbæk,7867753.000
+Klampenborg,Skodsborg,492435.000
+Vedbæk,Skodsborg,4650775.000
+Hellerup,Klampenborg,1071750.000
+Skodsborg,Klampenborg,9002700.000
+Østerport,Hellerup,6801839.000
+Klampenborg,Hellerup,51322967.000
+Nørreport,Østerport,12821760.000
+Hellerup,Østerport,87615360.000
+Køge Nord,København Syd,2315401.000
+København H,København Syd,5998993.500
+Ølby,Køge Nord,18042015.000
+København Syd,Køge Nord,11886504.000
+Ringsted,Køge Nord,1273554.000
+Køge,Ølby,4488211.000
+Køge Nord,Ølby,417508.000
+Herfølge,Køge,19382938.000
+Ølby,Køge,1577681.000
+Tureby,Herfølge,3535680.000
+Køge,Herfølge,243840.000
+Haslev,Tureby,520537.500
+Herfølge,Tureby,124929.000
+Holme-Olstrup,Haslev,4333538.000
+Tureby,Haslev,984895.000
+Næstved Nord,Holme-Olstrup,398854.500
+Haslev,Holme-Olstrup,1161880.500
+Næstved,Næstved Nord,822672.000
+Holme-Olstrup,Næstved Nord,2399460.000
+Tårnby,CPH Lufthavn,404732.500
+Ørestad,Tårnby,52523.000
+CPH Lufthavn,Tårnby,2416058.000
+Høje Taastrup,Ørestad,285334.500
+Tårnby,Ørestad,8655146.500
+Roskilde,Trekroner,9704343.000
+Hedehusene,Trekroner,29113029.000
+Høje Taastrup,Trekroner,29113029.000
+Sorø,Ringsted,42095472.000
+Roskilde,Ringsted,49111384.000
+Køge Nord,Ringsted,54373318.000
+Næstved,Ringsted,58758263.000
+Borup,Ringsted,49111384.000
+Glumsø,Ringsted,75421054.000
+Slagelse,Sorø,10466351.000
+Ringsted,Sorø,9611955.000
+Bramming,Esbjerg,165446.000
+Spangsbjerg,Esbjerg,15386478.000
+Vejen,Bramming,0.000
+Gørding,Bramming,129022.000
+Esbjerg,Bramming,5935012.000
+Lunderskov,Vejen,545517.000
+Brørup,Vejen,8000916.000
+Bramming,Vejen,0.000
+Kolding,Lunderskov,535822.000
+Vejen,Lunderskov,6659502.000
+Middelfart,Kolding,4495600.000
+Taulov,Kolding,4495600.000
+Lunderskov,Kolding,48327700.000
+Odense,Middelfart,9364161.000
+Fredericia,Middelfart,16524990.000
+Nørre Aaby,Middelfart,25338318.000
+Kolding,Middelfart,16524990.000
+Langeskov,Odense,10386000.000
+Nyborg,Odense,0.000
+Middelfart,Odense,15319350.000
+Nyborg,Langeskov,1354127.500
+Odense,Langeskov,1750457.500
+Korsør,Nyborg,15681288.000
+Odense,Nyborg,0.000
+Langeskov,Nyborg,19414928.000
+Slagelse,Korsør,6520649.000
+Nyborg,Korsør,7733793.000
+Sorø,Slagelse,28270660.000
+Korsør,Slagelse,32125750.000
+København H,Valby,750835.500
+Høje Taastrup,Valby,750835.500
+Holsted,Gørding,35616.000
+Bramming,Gørding,1080352.000
+Brørup,Holsted,80276.000
+Gørding,Holsted,1806210.000
+Vejen,Brørup,136347.500
+Holsted,Brørup,2426985.500
+Fredericia,Taulov,95116.500
+Kolding,Taulov,10568.500
+Børkop,Fredericia,94030930.000
+Taulov,Fredericia,112837116.000
+Kolding,Fredericia,32239176.000
+Middelfart,Fredericia,33582475.000
+Vejle,Fredericia,0.000
+Brejning,Børkop,2393800.500
+Fredericia,Børkop,775456.500
+Vejle,Brejning,1784844.000
+Børkop,Brejning,545369.000
+Hedensted,Vejle,7587182.000
+Brejning,Vejle,2182614.000
+Fredericia,Vejle,0.000
+Horsens,Vejle,7587182.000
+Vejle Sygehus,Vejle,9665862.000
+Horsens,Hedensted,81935.500
+Vejle,Hedensted,81935.500
+Skanderborg,Horsens,26625975.000
+Hedensted,Horsens,6745247.000
+Vejle,Horsens,6745247.000
+Viby Jylland,Skanderborg,8386455.000
+Horsens,Skanderborg,1960470.000
+Aarhus H,Skanderborg,8386455.000
+Alken,Skanderborg,10129095.000
+Aarhus H,Viby Jylland,37136.000
+Skanderborg,Viby Jylland,0.000
+Hørning,Viby Jylland,3416512.000
+Sjørring,Thisted,28941.000
+Snedsted,Sjørring,7784.000
+Hørdum,Snedsted,23569.500
+Bedsted Thy,Hørdum,10900.000
+Hurup Thy,Bedsted Thy,32842.500
+Ydby,Hurup Thy,80895.000
+Lyngs,Ydby,14693.000
+Hvidbjerg,Lyngs,18088.000
+Uglev,Hvidbjerg,100660.500
+Oddesund Nord,Uglev,22345.000
+Humlum,Oddesund Nord,3602.500
+Struer,Humlum,56142.000
+Viby Jylland,Aarhus H,6795232.500
+Randers,Aarhus H,35788224.500
+Skanderborg,Aarhus H,0.000
+Hadsten,Aarhus H,35788224.500
+Hinnerup,Aarhus H,41677426.000
+Hobro,Randers,16271361.500
+Aarhus H,Randers,2156445.500
+Langå,Randers,2156445.500
+Aalborg,Hobro,0.000
+Arden,Hobro,8669556.000
+Randers,Hobro,1032090.000
+Aalborg Vestby,Aalborg,41973885.000
+Hobro,Aalborg,0.000
+Skalborg,Aalborg,1865506.000
+Lindholm,Aalborg Vestby,1444124.500
+Aalborg,Aalborg Vestby,47608.500
+Aalborg Lufthavn,Lindholm,1391224.000
+Brønderslev,Lindholm,1406346.000
+Aalborg Vestby,Lindholm,30244.000
+Vrå,Brønderslev,0.000
+Hjørring,Vrå,0.000
+Tølløse,Vipperød,363496.500
+Holbæk,Vipperød,161554.000
+Hvalsø,Tølløse,1584020.000
+Vipperød,Tølløse,13305768.000
+Lejre,Hvalsø,1739034.000
+Tølløse,Hvalsø,13121802.000
+Roskilde,Lejre,442076.000
+Hvalsø,Lejre,9062558.000
+Høje Taastrup,Hedehusene,173351.000
+Trekroner,Hedehusene,173351.000
+Vordingborg,Næstved,71109009.000
+Glumsø,Næstved,4587678.000
+Næstved Nord,Næstved,52758297.000
+Nykøbing F,Vordingborg,17343799.000
+Langå,Hadsten,3914608.500
+Aarhus H,Hadsten,144985.500
+Randers,Langå,121521.000
+Ulstrup,Langå,3767151.000
+Hadsten,Langå,486084.000
+Skørping,Arden,1541517.500
+Hobro,Arden,163219.500
+Støvring,Skørping,2377943.000
+Arden,Skørping,221204.000
+Svenstrup (Jylland),Støvring,1765360.500
+Skørping,Støvring,142040.500
+Skalborg,Svenstrup (Jylland),852192.000
+Støvring,Svenstrup (Jylland),58104.000
+Aalborg,Skalborg,586287.500
+Svenstrup (Jylland),Skalborg,32937.500
+Ringsted,Glumsø,237967.500
+Næstved,Glumsø,47593.500
+Viby Sjælland,Borup,5656195.500
+Ringsted,Borup,198463.000
+Roskilde,Viby Sjælland,195804.000
+Borup,Viby Sjælland,3524472.000
+Lindholm,Aalborg Lufthavn,2033.000
+Ejby,Nørre Aaby,2998326.000
+Gelsted,Ejby,2485196.000
+Aarup,Gelsted,1692662.000
+Tommerup,Aarup,2527194.000
+Odense,Tommerup,180045.000
+Jelling,Vejle Sygehus,832699.000
+Give,Jelling,2215447.500
+Thyregod,Give,2643264.000
+Brande,Thyregod,941676.000
+Herning,Brande,2244034.500
+Gødstrup,Herning,26753287.000
+Herning Messecenter,Herning,26753287.000
+Vildbjerg,Gødstrup,2694065.000
+Aulum,Vildbjerg,3275055.000
+Holstebro,Aulum,960904.000
+Hjerm,Holstebro,10400237.500
+Struer,Hjerm,749034.000
+Hadsten,Hinnerup,59912.500
+Bjerringbro,Ulstrup,1673529.000
+Rødkærsbro,Bjerringbro,5118505.000
+Viborg,Rødkærsbro,2120736.000
+Sparkær,Viborg,15720984.000
+Stoholm,Sparkær,636461.000
+Højslev,Stoholm,2065140.000
+Skive,Højslev,962150.000
+Vinderup,Skive,6401531.500
+Struer,Vinderup,306060.000
+Gjesing,Spangsbjerg,2501387.000
+Guldager,Gjesing,2106387.500
+Varde Kaserne,Guldager,482880.000
+Varde,Varde Kaserne,622994.000
+Skanderborg,Hørning,738369.500
+Ry,Alken,543649.000
+Laven,Ry,7299990.000
+Svejbæk,Laven,705168.000
+Silkeborg,Svejbæk,1679215.500
+Engesvang,Silkeborg,15127868.000
+Bording,Engesvang,1667110.500
+Ikast,Bording,1482600.000
+Hammerum,Ikast,4247858.000
+Birk Centerpark,Hammerum,1166217.000
+Herning,Birk Centerpark,296351.000
+Studsgård,Herning Messecenter,218955.000
+Kibæk,Studsgård,312187.500
+Troldhede,Kibæk,1297632.000
+Borris,Troldhede,684045.500
+Skjern,Borris,565212.000
+Tarm,Skjern,5194147.500
+Ølgod,Tarm,2249472.000
+Gårde,Ølgod,2479171.500
+Tistrup,Gårde,320960.000
+Sig,Tistrup,1328278.000
+Varde Nord,Sig,663300.000
+Varde,Varde Nord,451513.000

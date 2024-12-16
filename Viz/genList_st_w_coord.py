@@ -27,12 +27,13 @@ def get_line_info(data):
 def create_dataset():
     for train in trains_dict:
         for i,stop in enumerate(trains_dict[train]['stops']):
-            if stop not in dataset_dict:
-                dataset_dict[stop] = trains_dict[train]["coordinates"][i]
+            cleaned_stop = stop.replace(" st.", "").replace(" St.", "").strip()
+            if cleaned_stop not in dataset_dict:
+                dataset_dict[cleaned_stop] = trains_dict[train]["coordinates"][i]
 
 
 def write_dataset():
-    with open("dataset.csv", 'w', newline='') as outfile:
+    with open("coordinates.csv", 'w', newline='') as outfile:
         writer = csv.writer(outfile)
         for station in dataset_dict:
             row = [station]
