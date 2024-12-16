@@ -1,4 +1,4 @@
-# P1_Project - Can Trains Outrun Planes?
+# P1_Project - How does DSB implement eletrical trains efficiently?
 ## Participants
 - Magnus Levanius Schouw Christiansen
 - Andreas Foverskov
