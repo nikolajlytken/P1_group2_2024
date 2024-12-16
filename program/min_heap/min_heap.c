@@ -84,10 +84,9 @@ void insert_element(MinHeap* heap, HeapNode value, int* positions){
     heapify_up(heap, i, positions);
 }
 
-void decrease_node_val(MinHeap* heap, int node_index, int new_distance, int* positions){
+void decrease_node_val(MinHeap* heap, int node_index, double new_distance, int* positions){
     int i = heap->positions[node_index];
     heap->data[i].distance = new_distance;
 
     heapify_up(heap, i, positions);
 }
-
