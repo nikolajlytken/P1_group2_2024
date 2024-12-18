@@ -8,13 +8,6 @@ files = os.listdir(dir)
 
 trains_dict = {}
 dataset_dict = {}
-#loads a given json file. 
-def load_data(file):
-    with open(f"JourneyDetail_data/{file}",'r') as input:
-        data = json.load(input)
-        input.close()
-        return data
-    
 # Prints trainName, first and last stops of all found trains.
 def printstationslist(data):
         end = len(data["Stops"]["Stop"])-1
@@ -26,7 +19,14 @@ def printstationslist(data):
         if message not in printed_messages:
             print(f"train: {trainName}",message)
             printed_messages.add(message)
-        
+
+#loads a given json file. 
+def load_data(file):
+    with open(f"JourneyDetail_data/{file}",'r') as input:
+        data = json.load(input)
+        input.close()
+        return data
+    
 def get_line_info(data):
     if data["Product"][0]["operator"] != "Skånetrafiken":
         trainName = data["Product"][0]["name"]
@@ -46,7 +46,7 @@ def create_dataset():
         {stationName:{connectsTo[],DistBetween[]}}
     """
     for train in trains_dict:
-        l = len(trains_dict[train]["stops"])
+        l = len(trains_dict[train]["stops"]) 
         for i in range(l-1):
             currSt = trains_dict[train]["stops"][i+1]
             currCoord = trains_dict[train]["coordinates"][i+1]

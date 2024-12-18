@@ -2,7 +2,6 @@ import json
 import requests
 import os 
 import sys
-base_url = "https://www.rejseplanen.dk/api/"
 
 def init_folders():
     paths = ["DepatureBoard_data/raw","DepatureBoard_data/formated","JourneyDetail_data"]
@@ -12,6 +11,7 @@ def init_folders():
         else:
             os.makedirs(path,exist_ok=True)
 
+base_url = "https://www.rejseplanen.dk/api/"
 def scrape_locationdetail(station):
     endpoint = "location.name"
 
@@ -41,7 +41,7 @@ def find_stationId(station,StationId_dict):
     print(f"StationId succesfully loaded for {station}")
 
 #DONE
-def scrape_dboard(stationId_dict):
+def scrape_depatureBoard(stationId_dict):
     for station in stationId_dict:    
         endpoint = "departureBoard"
         params = {
@@ -69,12 +69,15 @@ def scrape_dboard(stationId_dict):
             print(response.text)
 
 # Removes every depature that is not, trains.
-# Maybe it should be arrivals instead?? Which lines are u gonna miss? 
-def format_dboard(stationId_dict):
+def format_depatureBoard(stationId_dict):
+    '''
+    Removes every depature that is not trains. 
+    This is defined by the field found in (departure["Product"][0]["icon"]["res"]) where it needs to "prod_ic"
+    '''
     for station in stationId_dict:
-        with open(f'DepatureBoard_data/raw/response_depatureboard_{station}.json',"r") as f:
-            input = json.load(f)
-
+        with open(f'DepatureBoard_data/raw/response_depatureboard_{station}.json',"r") as input_file:
+            input = json.load(input_file)
+        input_file.close()
         with open(f'DepatureBoard_data/formated/formated_depatureboard_{station}.json', "a") as out:
             out.write("{\"Depature\":[")
             for departure in input["Departure"]:
@@ -82,6 +85,7 @@ def format_dboard(stationId_dict):
                     json.dump(departure, out,indent=4)
                     out.write(',\n')
             out.write("{}]}")
+        out.close()
         print(f"Depature board of {station} formatted")
 
 def scrape_journeyDetail(refId,trainName):
@@ -158,11 +162,11 @@ def main():
 
 
     #scrape depatureboard
-    scrape_dboard(stationId_dict)
+    scrape_depatureBoard(stationId_dict)
     
     #Export all train journey from depatureBoards.
     print("___________Starting Formatting:___________")
-    format_dboard(stationId_dict)
+    format_depatureBoard(stationId_dict)
 
     print("___________Getting journeyDetails:___________")
     #Scrape station from all train journeys
