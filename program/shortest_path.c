@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <math.h>
 
 #include "data_to_graph.h"
 #include "shortest_path.h"
@@ -33,9 +34,12 @@ int path_find_init(Graph* network, int source, int target, int num_nodes) {
 
     for (int i = 0; i < num_nodes; i++){
     	int j = 0;
+    	double akkum = 0;
     	while (paths_id[i][j] != -1){
     		ListNode* curr = find_edge(network, paths_id[i][j]);
-    		curr->times_visited++;
+    		int pass = curr->passengers_avg;
+    		akkum = akkum * (pow(2, -(curr->distance / 79.4))) + (double)pass;
+    		curr->ret_val += akkum;
     		j++;
     	}
     }
@@ -83,6 +87,7 @@ void update_paths_id(Station** stations, int** paths_id, int from, int to){
 	}
 	paths_id[to][i] = curr->edge_id;
 }
+
 
 
 
