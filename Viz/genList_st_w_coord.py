@@ -35,6 +35,7 @@ def create_dataset():
 def write_dataset():
     with open("coordinates.csv", 'w', newline='') as outfile:
         writer = csv.writer(outfile)
+        writer.writerow(['station','lon','lat'])
         for station in dataset_dict:
             row = [station]
             row.append(dataset_dict[station][0])

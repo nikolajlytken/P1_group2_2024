@@ -5,7 +5,7 @@ import pandas as pd
 
 
 printed_messages = set()
-dir = "./JourneyDetail_data"
+dir = "JourneyDetail_data"
 files = os.listdir(dir)
 
 trains_dict = {}
@@ -25,9 +25,6 @@ def printstationslist(data):
 def import_paastiger_csv(filename='paastiger_data.csv'):
     try:
         csv = pd.read_csv(f'{filename}', sep=';')
-        print("CSV file loaded successfully")
-        print("\nDataFrame Info:")
-        print(csv.info())
         return csv
     except FileNotFoundError:
         print("Error: paastiger_data.csv file not found")
@@ -180,6 +177,7 @@ def main():
 
     print("________ Writing dataset________")
     write_dataset(paastiger)
+    print("dataset.txt succesfully written")
 
 if __name__ == '__main__':
     main()
