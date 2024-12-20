@@ -1,10 +1,11 @@
 import pandas as pd 
 import matplotlib.pyplot as plt
-import math 
+import math
+
 
 def edges():
     edges_arr = []
-    with open("../program/output.txt",'r') as edges:
+    with open(f"../program/output.txt",'r') as edges:
         for line in edges:
             edges_arr.append(line.strip().split(','))
     edges.close()

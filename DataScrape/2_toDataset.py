@@ -24,7 +24,7 @@ def printstationslist(data):
 
 def import_paastiger_csv(filename='paastiger_data.csv'):
     try:
-        csv = pd.read_csv(f'{filename}', sep=';')
+        csv = pd.read_csv(filename, sep=';')
         return csv
     except FileNotFoundError:
         print("Error: paastiger_data.csv file not found")

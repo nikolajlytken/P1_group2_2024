@@ -11,13 +11,13 @@
 ## Important Dependencies
 - Python 3.12
 - requests
-    pip install requests
+    ``pip install requests``
 - Pandas
-    pip install pandas
+    ``pip install pandas``
 - matplotlib
-    pip install matplotlib
-- geopandas 
-    pip install geopandas
+    ``pip install matplotlib``
+- geopandas (maybe)
+    ``pip install geopandas``
 
 
 ## How to use the project 
