@@ -5,7 +5,7 @@ import pandas as pd
 
 
 printed_messages = set()
-dir = "JourneyDetail_data"
+dir = "./JourneyDetail_data"
 files = os.listdir(dir)
 
 trains_dict = {}
