@@ -90,3 +90,4 @@ void decrease_node_val(MinHeap* heap, int node_index, double new_distance, int* 
 
     heapify_up(heap, i, positions);
 }
+

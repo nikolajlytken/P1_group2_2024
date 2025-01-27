@@ -33,8 +33,7 @@ void output_file(Graph* network){
 		Station* station = network->stations[i];
 		ListNode* curr = network->stations[i]->list_head->next;
 		while (curr != NULL){
-			double output_val = calc_passengers(network, station->name, network->stations[curr->idx_in_arr]->name) * (double)curr->times_visited;
-            fprintf(out, "%s,%s,%.3lf\n", network->stations[curr->idx_in_arr]->name, network->stations[i]->name, output_val);
+            fprintf(out, "%s,%s,%.3lf\n", network->stations[curr->idx_in_arr]->name, network->stations[i]->name, curr->ret_val);
 			curr = curr->next;
         }
 	}
@@ -55,7 +54,5 @@ double calc_passengers(Graph* network, char* a, char* b){
 	}
 	return (double)(pass_a + pass_b) / 2.0;
 }
-
-
 
 

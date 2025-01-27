@@ -83,9 +83,11 @@ Graph* create_graph(char* filename, int num_stations){
             else {
                 ListNode* new_node = (ListNode*)malloc(sizeof(ListNode));
                 new_node->idx_in_arr = curr_idx;
-                new_node->weight = atof(curr);
+                new_node->weight = calc_weight(network, network->stations[index], network->stations[curr_idx], atof(curr));
+                new_node->distance = atof(curr);
                 new_node->edge_id = current_edge_id++;
-                new_node->times_visited = 0;
+                new_node->passengers_avg = ((network->stations[index]->passengers + network->stations[curr_idx]->passengers) / 2);
+                new_node->ret_val = 0.0;
                 new_node->next = NULL;
                 last_node->next = new_node;
                 last_node = new_node;
@@ -135,23 +137,6 @@ int get_idx(Station** stations, int len, char* name){
     return -1;
 }
 
-void print_adj_list(Graph* network){
-    int k = 0;
-    for (int i = 0; i < network->num_stations; i++){
-        Station* station = network->stations[i];
-        printf("%s", station->name);
-        printf(" [");
-        printf("%s (Weight: %d)", station->name, 0);
-        ListNode *current = station->list_head->next;
-        while (current != NULL){
-            printf(" -> %s (weight: %d) (visited: %d)", network->stations[current->idx_in_arr]->name, current->weight, current->times_visited);
-            current = current->next;
-        }
-        printf("]");
-        printf("\n\n");
-    }
-}
-
 ListNode* find_edge(Graph* network, int edge_id) {
     for (int i = 0; i < network->num_stations; i++) {
         ListNode* current = network->stations[i]->list_head;
@@ -164,4 +149,16 @@ ListNode* find_edge(Graph* network, int edge_id) {
     }
     return NULL;
 }
+
+
+double calc_weight(Graph* network, Station* st_a, Station* st_b, double distance){
+    return 1 / ((((double)st_a->passengers + (double)st_b->passengers) / 2) / distance);
+}
+
+
+
+
+
+
+
 

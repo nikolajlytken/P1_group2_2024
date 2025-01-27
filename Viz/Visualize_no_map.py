@@ -1,22 +1,11 @@
 import pandas as pd 
 import matplotlib.pyplot as plt
-from pyproj import Transformer
-import math 
+import math
 
-def init_transformer(station_coords):
-    crs_wgs84 = "EPSG:4326"      # WGS84 Latitude/Longitude
-    crs_utm33n = "EPSG:32633"    # UTM Zone 33N
-    
-    transformer = Transformer.from_crs(crs_wgs84,crs_utm33n,always_xy=True)
-    
-    longitudes = station_coords['lon'].to_list()
-    latitudes = station_coords['lat'].tolist()
-
-    return transformer.transform(longitudes,latitudes)
 
 def edges():
     edges_arr = []
-    with open("../program/output.txt",'r') as edges:
+    with open(f"../program/output.txt",'r') as edges:
         for line in edges:
             edges_arr.append(line.strip().split(','))
     edges.close()
@@ -33,27 +22,26 @@ def find_coord_from_edges(edges_arr,station_coords):
         lon = data['lon'].tolist()
         lat = data['lat'].tolist()
         out.append((lon,lat,w))
-
     return out
 
 
 def plot_lines(lines):
     fig, ax = plt.subplots()
-    
+
     for triples in lines:
         x = [float(triples[0][0]), float(triples[0][1])]
         y = [float(triples[1][0]), float(triples[1][1])]
         
         # Convert string to float and normalize to 0-1 range for colormap
         try:
-            weight = float(triples[2]) / 1000000
+            weight = float(triples[2])/10**6
             # Assuming weights are between 0-100, normalize to 0-1
-            normalized_weight = 1 / (1 + math.exp(-weight))
-            print(normalized_weight)
-            color = plt.cm.plasma(normalized_weight)
+            sigmoid_weight = 1 / (1 + math.exp(-weight))
+            normalized_weight = (sigmoid_weight-0.5)/0.5
+            color = plt.cm.coolwarm(normalized_weight)
         except ValueError:
             # Use default color if weight cannot be converted to float
-            color = 'blue'
+            color = 'red'
             
         ax.plot(x, y, marker='o', color=color)
 
@@ -79,8 +67,6 @@ def main():
 
     egde_arr = edges()
     lines = find_coord_from_edges(egde_arr,station_coords)
-    
-    print(lines)
 
     plot_lines(lines)
 

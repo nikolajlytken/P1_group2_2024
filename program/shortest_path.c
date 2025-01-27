@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <math.h>
 
 #include "data_to_graph.h"
 #include "shortest_path.h"
@@ -33,9 +34,17 @@ int path_find_init(Graph* network, int source, int target, int num_nodes) {
 
     for (int i = 0; i < num_nodes; i++){
     	int j = 0;
+    	double accum = 0;
     	while (paths_id[i][j] != -1){
     		ListNode* curr = find_edge(network, paths_id[i][j]);
-    		curr->times_visited++;
+    		int pass = curr->passengers_avg;
+			if(accum == 0){
+				accum = (pow(2, -(curr->distance / 79.4))) * (double)pass;
+			}
+			else{
+				accum = accum * (pow(2, -(curr->distance / 79.4))) + (double)pass;
+			}
+    		curr->ret_val += accum;
     		j++;
     	}
     }
@@ -64,7 +73,7 @@ int compute_path(Station** stations, MinHeap* heap, double* path_sums, int sourc
 			if (path_sums[neighbor->idx_in_arr] > new_dist){
 				path_sums[neighbor->idx_in_arr] = new_dist;
 				decrease_node_val(heap, neighbor->idx_in_arr, path_sums[neighbor->idx_in_arr], heap->positions);
-				update_paths_id(stations, paths_id, curr_node.node, neighbor->idx_in_arr);
+				update_paths_id(stations, paths_id, curr_node.node, neighbor);
 			}
 			neighbor = neighbor->next;
 		}
@@ -72,16 +81,24 @@ int compute_path(Station** stations, MinHeap* heap, double* path_sums, int sourc
 	return path_sums[target];
 }
 
-void update_paths_id(Station** stations, int** paths_id, int from, int to){
-	ListNode* curr = stations[from]->list_head->next;
-	while (curr->idx_in_arr != to){
-		curr = curr->next;
-	}
-	int i = 0;
-	while (paths_id[to][i + 1] != -1){
+// void update_paths_id(Station** stations, int** paths_id, int from, int to){
+// 	ListNode* curr = stations[from]->list_head->next;
+// 	while (curr->idx_in_arr != to){
+// 		curr = curr->next;
+// 	}
+// 	int i = 0;
+// 	while (paths_id[to][i + 1] != -1){
+// 		i++;
+// 	}
+// 	paths_id[to][i] = curr->edge_id;
+// }
+
+void update_paths_id(Station** stations, int** paths_id, int from, ListNode* neighbor){
+	int i = 0; 
+	while(paths_id[neighbor->idx_in_arr][i+1]!=-1){
 		i++;
 	}
-	paths_id[to][i] = curr->edge_id;
+	paths_id[neighbor->idx_in_arr][i] = neighbor->edge_id;
 }
 
 
