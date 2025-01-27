@@ -11,7 +11,7 @@ with open('extId.json',) as f:
 #for extID in input: 
 # Define the parameters (replace YOUR_ACCESS_ID with your actual API key)
 params = {
-    "accessId": "6b2d0ad1-44e1-49df-a746-82580093194c",
+    "accessId": "",
     "format": "json",
     "extId":"1273"
     #"match":"Re"

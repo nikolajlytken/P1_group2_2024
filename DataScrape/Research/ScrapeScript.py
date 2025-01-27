@@ -11,7 +11,7 @@ end = 860061706
 
 # Define the parameters (replace YOUR_ACCESS_ID with your actual API key)
 params = {
-    "accessId": "6b2d0ad1-44e1-49df-a746-82580093194c",
+    "accessId": "",
     "format": "json",
     "match":"Re 1533"
     # "originId":"A=4@O=K\u00f8benhavns Hovedbaneg\u00e5rd, Anden bygning, K\u00f8benhavn@X=12564672@Y=55672776@U=104@L=990032628@B=1@p=1731313114@",

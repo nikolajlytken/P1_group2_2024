@@ -9,7 +9,7 @@ lines = ["69","75","76"]
 for line in lines: 
     # Define the parameters (replace YOUR_ACCESS_ID with your actual API key)
     params = {
-        "accessId": "6b2d0ad1-44e1-49df-a746-82580093194c",
+        "accessId": "",
         "format": "json",
         "lineId": f"065_280_00_{line}",
         "date":"2024-11-22"  # or "xml" depending on the desired response format

@@ -7,7 +7,7 @@ endpoint = "departureBoard" #"journeyDetail"
 
 # Define the parameters (replace YOUR_ACCESS_ID with your actual API key)
 params = {
-    "accessId": "6b2d0ad1-44e1-49df-a746-82580093194c",
+    "accessId": "",
     "format": "json",
     "id":"A=1@O=K\u00f8benhavn H@X=12565562@Y=55673063@U=86@L=8600626@"
     #"id": "2|#VN#1#ST#1732276819#PI#0#ZI#2545#TA#0#DA#161224#1S#8600669#1T#813#LS#8600719#LT#1006#PU#86#RT#1#CA#004#ZE#2535#ZB#Re 2535#PC#2#FR#8600669#FT#813#TO#8600719#TT#1006#"
