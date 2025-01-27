@@ -22,7 +22,6 @@ def find_coord_from_edges(edges_arr,station_coords):
         lon = data['lon'].tolist()
         lat = data['lat'].tolist()
         out.append((lon,lat,w))
-
     return out
 
 
